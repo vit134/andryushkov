@@ -1,0 +1,98 @@
+@roundSize: 80px;
+
+.radial-progress {
+  float: left;
+  width: @roundSize;
+  height: @roundSize;
+  position: relative;
+  background-color: #d7d7d7;
+  border-radius: 50%;
+}
+@media (max-width: 480px) {
+  .radial-progress {
+    width: 85px;
+    height: 85px;
+  }
+}
+.radial-progress .circle .mask, .radial-progress .circle .fill, .radial-progress .circle .shadow {
+  width: @roundSize;
+  height: @roundSize;
+  position: absolute;
+  border-radius: 50%;
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask, .radial-progress .circle .fill, .radial-progress .circle .shadow {
+    width: 85px;
+    height: 85px;
+  }
+}
+.radial-progress .circle .mask, .radial-progress .circle .fill {
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 1.5s;
+  transition: -ms-transform 1.5s;
+  transition: transform 1.5s;
+}
+.radial-progress .circle .mask.reanimate, .radial-progress .circle .fill.reanimate {
+  transition: -webkit-transform 0s;
+  transition: -ms-transform 0s;
+  transition: transform 0s;
+}
+.radial-progress .circle .mask.reset, .radial-progress .circle .fill.reset {
+  -webkit-transform: rotate(0deg) !important;
+  -ms-transform: rotate(0deg) !important;
+  transform: rotate(0deg) !important;
+}
+.radial-progress .circle .mask {
+  clip: rect(0px, @roundSize, @roundSize, @roundSize / 2);
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask {
+    clip: rect(0px, 85px, 85px, 42.5px);
+  }
+}
+.radial-progress .circle .mask .fill {
+  clip: rect(0px, @roundSize / 2, @roundSize, 0px);
+  background-color: #EA463D;
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask .fill {
+    clip: rect(0px, 42.5px, 85px, 0px);
+  }
+}
+.radial-progress .inset {
+  width: 74px !important;
+  height: 74px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -37px 0 0 -37px !important;
+  background-color: #fbfbfb;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+@media (max-width: 480px) {
+  .radial-progress .inset {
+    width: 66px !important;
+    height: 66px !important;
+    margin: -33px 0 0 -33px !important;
+    line-height: 90px;
+  }
+}
+.radial-progress .little {
+  font-size: 22px;
+  color: #d7d7d7;
+}
+@media (max-width: 480px) {
+  .radial-progress .little {
+    font-size: 12px;
+  }
+}
+.radial-progress .big {
+  font-size: 37px;
+}
+@media (max-width: 480px) {
+  .radial-progress .big {
+    font-size: 27px;
+  }
+}

@@ -1,0 +1,69 @@
+.header {
+    height: 65px;
+    line-height: 65px;
+    background-color: #F4F7F6;
+    font-size: 0;
+
+    &__col {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__left-side {
+        width: 40%;
+    }
+
+    &__central-side {
+        width: 20%;
+        text-align: center;
+    }
+
+    &__right-side {
+        width: 40%;
+    }
+
+    &__logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        height: 45px;
+        background: url('http://placekitten.com/150/45') center no-repeat;
+        background-size: 100%;
+    }
+
+    &__item {
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+        &_menu {
+            padding: 0 15px;
+            border-right: 1px solid #eee;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        &_search {
+            padding: 0 15px;
+            cursor: pointer;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 25px;
+        height: 25px;
+
+        &_menu {
+            background: url('@{blockPath}header/images/menu.svg') center no-repeat;
+            background-size: 100%;
+            margin-right: 5px;
+        }
+
+        &_search {
+            background: url('@{blockPath}header/images/search.svg') center no-repeat;
+            background-size: 100%;
+        }
+    }
+}
