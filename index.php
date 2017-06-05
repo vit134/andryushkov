@@ -1,17 +1,9 @@
 <?php
     include 'tmp/header.html';
 ?>
-<div class="menu js-main-menu">
-    <ul class="menu__ul">
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-        <li class="menu__item"><a href="#">Home</a></li>
-    </ul>
-</div>
+<?php
+    include 'tmp/main-menu.html';
+?>
 <div class="l-window">
     <?php include 'tmp/topline.html'; ?>
 

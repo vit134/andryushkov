@@ -1,0 +1,49 @@
+.main-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 320px;
+    left: -320px;
+    transition: All 0.5s ease;
+
+    &.open {
+        left: 0;
+    }
+
+    &.open + .l-window {
+        position: fixed;
+        -webkit-transform: translateX(320px);
+        transform: translateX(320px);
+        filter: blur(2px);
+    }
+
+    &__header {
+        height: 65px;
+        line-height: 65px;
+        background-color: #F4F7F6;
+        font-size: 0;
+        padding: 0 15px;
+
+        & .close-main-menu {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url('@{blockPath}/main-menu/images/close.svg') center no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+        }
+
+        &__col {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+
+
+            &:last-child {
+                text-align: right;
+
+            }
+        }
+    }
+}

@@ -309,6 +309,9 @@ a {
   vertical-align: middle;
   margin-right: 15px;
 }
+.main-block__like-user__item:last-child {
+  margin-right: 0;
+}
 .main-block__like-user__img {
   max-width: 30px;
   border-radius: 50%;
@@ -353,7 +356,7 @@ a {
   background-color: #42ab9e;
   border-color: #42ab9e;
 }
-.menu {
+.main-menu {
   display: block;
   position: absolute;
   top: 0;
@@ -361,13 +364,37 @@ a {
   left: -320px;
   transition: All 0.5s ease;
 }
-.menu.open {
+.main-menu.open {
   left: 0;
 }
-.menu.open + .l-window {
+.main-menu.open + .l-window {
   position: fixed;
   -webkit-transform: translateX(320px);
   transform: translateX(320px);
   -webkit-filter: blur(2px);
           filter: blur(2px);
+}
+.main-menu__header {
+  height: 65px;
+  line-height: 65px;
+  background-color: #F4F7F6;
+  font-size: 0;
+  padding: 0 15px;
+}
+.main-menu__header .close-main-menu {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../css/blocks//main-menu/images/close.svg') center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.main-menu__header__col {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+.main-menu__header__col:last-child {
+  text-align: right;
 }
