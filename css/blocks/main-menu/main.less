@@ -3,8 +3,11 @@
     position: absolute;
     top: 0;
     width: 320px;
+    height: 100%;
+    background-color: #F4F7F6;
     left: -320px;
     transition: All 0.5s ease;
+    border-right: 1px solid #eee;
 
     &.open {
         left: 0;
@@ -22,7 +25,8 @@
         line-height: 65px;
         background-color: #F4F7F6;
         font-size: 0;
-        padding: 0 15px;
+        padding: 0 15px 0 25px;
+        border-bottom: 1px solid #eee;
 
         & .close-main-menu {
             width: 30px;
@@ -45,5 +49,36 @@
 
             }
         }
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        transition: All .2s ease;
+
+        & a {
+            display: block;
+            height: 100%;
+            color: #707070;
+            font-size: 16px;
+            font-weight: 900;
+            padding: 20px 15px 20px 25px;
+        }
+
+        & a:first-letter {
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            background-color: #fbfbfb;
+        }
+
+        &.active {
+            & a {
+                color: #42ab9e;
+            }
+        }
+
     }
 }

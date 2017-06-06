@@ -2,9 +2,11 @@
 
 $(document).ready(function() {
 
-    var progressBar = $('.js-circle-progress')
+    var $lWindow = $('.js-l-window')
+      , progressBar = $('.js-circle-progress')
       , $mainmenu = $('.js-main-menu')
       , $toplineMenuButton = $('.js-main-menu-button')
+      , $closeMainMenuButton = $('.js-close-main-menu')
       ;
 
     function init() {
@@ -15,6 +17,12 @@ $(document).ready(function() {
     function bindEvents() {
         $toplineMenuButton.on('click', function() {
             $mainmenu.addClass('open');
+            $lWindow.addClass('open')
+        })
+
+        $closeMainMenuButton.on('click', function() {
+            $mainmenu.removeClass('open');
+            $lWindow.removeClass('open')
         })
     }
 
@@ -50,7 +58,8 @@ $(document).ready(function() {
             var posX = canvas.width / 2,
                 posY = canvas.height / 2,
                 oneProcent = 360 / 100,
-                result = oneProcent * options.percent;
+                result = oneProcent * options.percent,
+                procent = 0;
 
             ctx.lineCap = 'round';
             arcMove();
@@ -59,6 +68,10 @@ $(document).ready(function() {
                 var deegres = 0;
                 var acrInterval = setInterval (function() {
                     deegres += 1;
+
+                    procent = deegres / oneProcent;
+                    //span.innerHTML = procent.toFixed();
+
                     ctx.clearRect( 0, 0, canvas.width, canvas.height );
 
                     ctx.beginPath();
