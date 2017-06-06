@@ -17,7 +17,6 @@
 <body>
     <div class="container">
         <div class="row">
-            <h2>Admin Panel</h2>
             <nav class="navbar navbar-default">
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Brand</a>
+                  <a class="navbar-brand" href="#">Admin Panel</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
