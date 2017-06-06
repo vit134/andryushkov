@@ -1,9 +1,5 @@
 <?php
-    include '../core/dbconnect.php';
-
-    if (count($_GET) != 0){
-        $formFields = $_GET;
-    }
+    //echo phpinfo();
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +38,11 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <form action="/admin/index.php"  method="get">
+                <form action="../admin/core/add_site.php"  method="post">
+                  <input type="hidden" value="add_site" name="form_type">
                   <div class="form-group">
                     <label for="site_name">Site name</label>
-                    <input type="text" class="form-control" name="site_name" id="site_name" placeholder="Site name">
+                    <input type="text" class="form-control" name="site_name" id="site_name" placeholder="Site name" required>
                   </div>
                   <div class="form-group">
                     <label for="site_description">Site description</label>
@@ -61,7 +58,7 @@
                   </div>
                   <div class="form-group">
                     <label for="date_create">Date create</label>
-                    <input type="date" class="form-control" name="date_create" id="date_create" placeholder="">
+                    <input type="datetime-local" class="form-control" name="date_create" id="date_create" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="design_raiting">Design raiting</label>
