@@ -1,0 +1,20 @@
+.form-group {
+    position: relative;
+}
+
+input:required {
+    position: relative;
+}
+
+label + i {
+    display: inline-block;
+    color: red;
+}
+
+.alert {
+    display: none;
+}
+
+.alert strong {
+    text-transform: uppercase;
+}

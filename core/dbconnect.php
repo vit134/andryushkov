@@ -4,6 +4,7 @@
     $password = '134vit134';
     $bdName = 'www_test';
 
+
     $mysqli = new mysqli($host, $user, $password, $bdName);
 
     if ($mysqli->connect_errno) {
