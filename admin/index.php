@@ -1,6 +1,7 @@
 <?php
     include '../core/config.php';
-    include '../core/dbconnect.php';
+    include SITE_PATH . 'core/dbconnect.php';
+
 
     $indexData = array();
     $route;

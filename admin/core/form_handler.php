@@ -1,7 +1,9 @@
 <?php
-    include '../../core/dbconnect.php';
+    include '../../core/config.php';
+    include SITE_PATH . 'core/dbconnect.php';
 
-    $uploads_dir = '../../uploads';
+    //$uploads_dir = '../../uploads';
+    $uploads_dir = SITE_PATH . '/uploads';
 
     if (count($_POST) != 0){
         $formFields = $_POST;
