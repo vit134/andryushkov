@@ -4,19 +4,37 @@ $(document).ready(function() {
       , $formAddSiteSubmit = $('#form-addSite-submit')
       , $aliasField = $('#alias')
       , $siteNameField = $('#site_name')
+      , $removeSiteButton = $('.remove-site-button')
       ;
 
     function init() {
         bindEvents();
 
         $('#date_create').datetimepicker({locale: 'ru'});
+
     }
 
-    function getFormfields($form) {
-        var $fields = $form.find('input');
+    /*function getFormfields($form) {
+        var $fields = $form.find('input, select');
         var data = {};
         $fields.each(function() {
             data[$(this).attr('name')] = $(this).val();
+        })
+
+        return data;
+    }*/
+
+    function getFormfields($form) {
+        var $fields = $form.find('input, select');
+        var data = new FormData();
+
+
+        $('.file-input').each(function(i) {
+            data.append($(this).attr('name'), $(this)[0].files[0])
+        })
+
+        $fields.each(function() {
+            data.append($(this).attr('name'), $(this).val());
         })
 
         return data;
@@ -83,11 +101,18 @@ $(document).ready(function() {
                 $.ajax({
                     url: '/admin/core/form_handler.php',
                     type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    //headers: {'cache-control': 'no-cache'}, // fix for IOS6 (not tested)
+                    dataType: 'json',
                     data: formData,
-                    beforeSend: function() {},
+                    beforeSend: function() {console.log(formData);},
                     success: function(e){
                         //console.log(JSON.parse(e));
-                        e = JSON.parse(e);
+                        console.log(e);
+
+                        /*e = JSON.parse(e);
                         var status = e.status;
 
                         if (e.status === 'success') {
@@ -95,11 +120,52 @@ $(document).ready(function() {
                             clearFormfields($formAddSite);
                         } else {
                             showAlert($('.alert-addSite'), 'danger', 'not success');
+                        }*/
+                    },
+                    error: function( jqXHR, textStatus, errorThrown ) {
+                       console.log('error');
+                       console.log(jqXHR);
+                       console.log(textStatus);
+                       console.log(errorThrown);
+                    }
+                });
+            }
+        })
+
+        $removeSiteButton.on('click', function(e) {
+            e.preventDefault();
+
+            var siteId = $(this).attr('data-site-id');
+            var siteRow = $(this).closest('tr');
+
+            siteRow.addClass('danger');
+
+            var confirmFunc = confirm("Are you sure to remove this site?");
+
+            if (confirmFunc) {
+                $.ajax({
+                    url: '/admin/core/remove-site.php',
+                    type: 'POST',
+                    data: {siteId: siteId},
+                    beforeSend: function() {},
+                    success: function(e){
+                        //console.log(JSON.parse(e));
+
+                        e = JSON.parse(e);
+                        var status = e.status;
+
+                        if (e.status === 'success') {
+                            showAlert($('.alert-removeSite'), 'success', 'success');
+                            clearFormfields($formAddSite);
+                            siteRow.remove();
+                        } else {
+                            showAlert($('.alert-removeSite'), 'danger', 'not success');
                         }
                     }
                 });
             }
         })
+
 
         $(function(){
             $siteNameField.on('keyup', function(){

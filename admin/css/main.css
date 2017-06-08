@@ -18,3 +18,48 @@ label + i {
 .alert strong {
     text-transform: uppercase;
 }
+
+table.table_all-sites > tbody > tr > th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.table_all-sites > tbody > tr > td {
+    text-align: center;
+}
+
+
+table.table_all-sites > tbody > tr > th > table th,
+table.table_all-sites > tbody > tr > th > table td {
+    width: 25%;
+    text-align: center;
+}
+
+table.table_all-sites > tbody > tr > th > table,
+table.table_all-sites > tbody > tr > td > table {
+    width: 100%;
+    text-align: center;
+}
+
+table.table_all-sites > tbody > tr > td > table th,
+table.table_all-sites > tbody > tr > td > table td {
+    width: 25%;
+    text-align: center;
+
+}
+.center-align {
+    text-align: center;
+}
+
+.table-icon {
+    margin-right: 3px;
+    color: #000;
+}
+
+.table-icon:hover {
+    color: grey;
+}
+
+.table-icon:last-child {
+    margin-right: 0;
+}
