@@ -72,13 +72,21 @@
                 `small_img_file` = '". $formFields['small_img_file'] ."'
             WHERE `id`=" . $formFields['site_id'];
 
-            $mysqli->query($addSmallImgQuery);
+            if ($mysqli->query($addSmallImgQuery)) {
+                $response['status-small-img'] = 'success';
+            } else {
+                $response['status-small-img'] = $mysqli->error;
+            }
         } else if ($filesArr['big_img_file']['path'] != '') {
             $addBigImgQuery = "UPDATE `sites` SET
                 `big_img_file` = '". $formFields['big_img_file'] ."'
             WHERE `id`=" . $formFields['site_id'];
 
-            $mysqli->query($addBigImgQuery);
+            if ($mysqli->query($addBigImgQuery)) {
+                $response['status-big-img'] = 'success';
+            } else {
+                $response['status-big-img'] = $mysqli->error;
+            }
         }
 
         if ($mysqli->query($addSiteQuery)) {
