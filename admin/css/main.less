@@ -1,0 +1,56 @@
+.form-group {
+    position: relative;
+}
+
+input:required {
+    position: relative;
+}
+
+label + i {
+    display: inline-block;
+    color: red;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.alert {
+    display: none;
+
+    & strong {
+        text-transform: uppercase;
+    }
+}
+
+.table_all-sites {
+
+    & .header {
+        cursor: pointer;
+        text-align: center;
+    }
+
+    & .table-icon {
+        margin-right: 3px;
+        color: #000;
+
+        &:hover {
+            color: grey;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__td {
+        &_icons {
+            text-align: center;
+        }
+
+        &_name {
+
+            font-weight: 500;
+        }
+    }
+}

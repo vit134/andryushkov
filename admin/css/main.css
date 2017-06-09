@@ -19,30 +19,35 @@ label + i {
     text-transform: uppercase;
 }
 
+table.table_all-sites .header {
+    text-align: center;
+}
+
 table.table_all-sites > tbody > tr > th {
     vertical-align: middle;
     text-align: center;
 }
 
-table.table_all-sites > tbody > tr > td {
+table.table_all-sites  tbody > tr > td, {
+table.table_all-sites  thead > tr > th {
     text-align: center;
 }
 
 
-table.table_all-sites > tbody > tr > th > table th,
-table.table_all-sites > tbody > tr > th > table td {
+table.table_all-sites  tbody > tr > th > table th,
+table.table_all-sites  tbody > tr > th > table td {
     width: 25%;
     text-align: center;
 }
 
-table.table_all-sites > tbody > tr > th > table,
-table.table_all-sites > tbody > tr > td > table {
+table.table_all-sites  tbody > tr > th > table,
+table.table_all-sites  tbody > tr > td > table {
     width: 100%;
     text-align: center;
 }
 
-table.table_all-sites > tbody > tr > td > table th,
-table.table_all-sites > tbody > tr > td > table td {
+table.table_all-sites  tbody > tr > td > table th,
+table.table_all-sites  tbody > tr > td > table td {
     width: 25%;
     text-align: center;
 
@@ -51,15 +56,15 @@ table.table_all-sites > tbody > tr > td > table td {
     text-align: center;
 }
 
-.table-icon {
+table.table_all-sites a.table-icon {
     margin-right: 3px;
     color: #000;
 }
 
-.table-icon:hover {
+table.table_all-sites a.table-icon:hover {
     color: grey;
 }
 
-.table-icon:last-child {
+table.table_all-sites a.table-icon:last-child {
     margin-right: 0;
 }

@@ -33,7 +33,6 @@
         return $path;
     }
 
-    $filesArr;
 
     foreach($_FILES as $key => $file) {
         if (move_uploaded_file($file["tmp_name"], $path = createCatalog() . '/' . $file["name"])) {
@@ -65,7 +64,8 @@
             `speed_raiting`,
             `alias`,
             `big_img_file`,
-            `small_img_file`
+            `small_img_file`,
+            `link`
         )
          VALUES (
             '',
@@ -80,7 +80,8 @@
             '". $formFields['speed_raiting'] ."',
             '". $formFields['alias'] ."',
             '". $filesArr['big_img_file']['path'] ."',
-            '". $filesArr['small_img_file']['path'] ."'
+            '". $filesArr['small_img_file']['path'] ."',
+            '". $formFields['link'] ."'
         )";
 
 

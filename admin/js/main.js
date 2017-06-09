@@ -5,13 +5,14 @@ $(document).ready(function() {
       , $aliasField = $('#alias')
       , $siteNameField = $('#site_name')
       , $removeSiteButton = $('.remove-site-button')
+      , $allSitesTable = $('.table_all-sites')
       ;
 
     function init() {
         bindEvents();
 
         $('#date_create').datetimepicker({locale: 'ru'});
-
+        $allSitesTable.tablesorter();
     }
 
     /*function getFormfields($form) {
@@ -107,12 +108,14 @@ $(document).ready(function() {
                     //headers: {'cache-control': 'no-cache'}, // fix for IOS6 (not tested)
                     dataType: 'json',
                     data: formData,
-                    beforeSend: function() {console.log(formData);},
+                    beforeSend: function() {
+                        //console.log(formData);
+                    },
                     success: function(e){
                         //console.log(JSON.parse(e));
-                        console.log(e);
+                        //console.log(e);
 
-                        /*e = JSON.parse(e);
+                        /*e = JSON.parse(e);*/
                         var status = e.status;
 
                         if (e.status === 'success') {
@@ -120,7 +123,7 @@ $(document).ready(function() {
                             clearFormfields($formAddSite);
                         } else {
                             showAlert($('.alert-addSite'), 'danger', 'not success');
-                        }*/
+                        }
                     },
                     error: function( jqXHR, textStatus, errorThrown ) {
                        console.log('error');

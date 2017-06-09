@@ -2,7 +2,6 @@
     include '../core/config.php';
     include SITE_PATH . 'core/dbconnect.php';
 
-
     $indexData = array();
     $route;
 
@@ -38,19 +37,13 @@
     function getSite() {
         global $mysqli, $indexData;
 
-        $siteTypesQuery = "SELECT `id`,`name`,`description`, `type`, `author`, `date_create`, `alias` FROM `sites`";
+        $siteTypesQuery = "SELECT * FROM `sites`";
         $siteTypesResult = $mysqli->query($siteTypesQuery);
 
-        foreach ($siteTypesResult as $row) {
-            $indexData['sites'][] = array(
-                'id' => $row['id'],
-                'name' => $row['name'],
-                'description' => $row['description'],
-                'type' => $row['type'],
-                'author' => $row['author'],
-                'date_create' => $row['date_create'],
-                'alias' => $row['alias'],
-            );
+        foreach ($siteTypesResult as $key => $row) {
+            foreach ($row as $keyRow => $valueRow) {
+                $indexData['sites'][$key][$keyRow] = $valueRow;
+            }
         }
     }
 
@@ -62,7 +55,7 @@
         getSite();
         $route = route();
 
-        echo SITE_PATH;
+
     }
 
     init();
@@ -83,8 +76,9 @@
     <script type="text/javascript" src="js/moments-locale-ru.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/datetime-picker.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/build/__main.css">
     <script type="text/javascript" src="js/validator.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
@@ -199,6 +193,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                         <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="link">Real Link</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">http://</div>
+                                                    <input type="text" class="form-control" name="link" id="link" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <label for="site_author">Site author</label>
@@ -236,37 +241,43 @@
                         <h2>All sites</h3>
                     </div>
                     <div class="row">
-                        <table class="table table-bordered table_all-sites">
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Type</th>
-                                <th>Alias</th>
-                                <th>Date Create</th>
-                                <th>Author</th>
-                                <th></th>
-                            </tr>
-                            <?php
-                                for ($i = 0; count($indexData['sites']) > $i;++$i) {
-                                    $siteItem = $indexData['sites'][$i];
+                        <table class="table table-bordered table_all-sites tablesorter">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Type</th>
+                                    <th>Alias</th>
+                                    <th>Date Create</th>
+                                    <th>Author</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    for ($i = 0; count($indexData['sites']) > $i;++$i) {
+                                        $siteItem = $indexData['sites'][$i];
 
-                                    echo '<tr>';
-                                    echo '<td>' . $siteItem['id'] . '</td>';
-                                    echo '<td>' . $siteItem['name'] . '</td>';
-                                    echo '<td>' . $siteItem['description'] . '</td>';
-                                    echo '<td>' . $siteItem['type'] . '</td>';
-                                    echo '<td>' . $siteItem['alias'] . '</td>';
-                                    echo '<td>' . $siteItem['date_create'] . '</td>';
-                                    echo '<td>' . $siteItem['author'] . '</td>';
-                                    echo '<td>
-                                        <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
-                                        <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                        <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon remove-site-button"><span class="glyphicon glyphicon-trash"></span></a>
-                                    </td>';
-                                    echo '</tr>';
-                                }
-                            ?>
+                                        $link = $siteItem['link'] != '' ? '<a href="'. $siteItem['link'] .'" target="_blank">' . $siteItem['name'] . '</a>' : $siteItem['name'];
+
+                                        echo '<tr>';
+                                        echo '<td>' . $siteItem['id'] . '</td>';
+                                        echo '<td class="table_all-sites__td_name">'. $link . '</td>';
+                                        echo '<td>' . $siteItem['description'] . '</td>';
+                                        echo '<td>' . $siteItem['type'] . '</td>';
+                                        echo '<td>' . $siteItem['alias'] . '</td>';
+                                        echo '<td>' . $siteItem['date_create'] . '</td>';
+                                        echo '<td>' . $siteItem['author'] . '</td>';
+                                        echo '<td class="table_all-sites__td_icons">
+                                            <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a href="" data-site-id="' . $siteItem['id'] . '" class="table-icon remove-site-button"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </td>';
+                                        echo '</tr>';
+                                    }
+                                ?>
+                            <tbody>
                         </table>
                     </div>
                 <? } ?>
