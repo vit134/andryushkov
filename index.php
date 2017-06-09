@@ -2,7 +2,7 @@
     include 'core/dbconnect.php';
 
     function getlatestSite ($mysqli) {
-        $query = 'SELECT * FROM `sites` ORDER BY `dateCreate` DESC LIMIT 1';
+        $query = 'SELECT * FROM `sites` ORDER BY `date_create` DESC LIMIT 1';
         $result = $mysqli->query($query);
 
         return $result->fetch_array(MYSQLI_ASSOC);

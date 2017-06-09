@@ -42,7 +42,7 @@
         }
 
         $filesArr[$key] = array(
-            'path'=> $path,
+            'path'=> '/uploads/' . $formFields['alias'] . '/' . $file["name"],
             'file'=> $file
         );
         //$response['files'][] = $key;
@@ -91,6 +91,8 @@
         } else {
             $response['status'] = 'danger';
         }
+    } else {
+        $response['status'] = 'Something went wrong';
     }
 
     echo json_encode($response);

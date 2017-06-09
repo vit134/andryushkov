@@ -17,9 +17,12 @@
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-    {% block alerts %}
-        {% include 'alerts.html' %}
-    {% endblock %}
+    <div class="alert alert-addSite">
+        Add site was <strong></strong>!
+    </div>
+    <div class="alert alert-removeSite">
+        Removing site was <strong></strong>!
+    </div>
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-default">
@@ -41,7 +44,7 @@
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites<span class="caret"></span></a>
                           <ul class="dropdown-menu">
                             <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
-                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="pages/add-edit-site.php">Add new site<span class="sr-only">(current)</span></a></li>
+                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new site<span class="sr-only">(current)</span></a></li>
                           </ul>
                         </li>
                     </ul>
@@ -49,7 +52,3 @@
               </div>
             </nav>
         </div>
-        {% block content %}{% endblock %}
-    </div>
-</body>
-</html>

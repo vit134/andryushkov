@@ -34,6 +34,7 @@ var path = {
             js: 'admin/js/main.js',
             less: 'admin/css/*.less',
             blocks: 'admin/css/blocks/*/*.less',
+            pages: 'admin/css/pages/*/*.less',
             vendorCss: 'admin/css/vendor/*.css'
         }
     }
@@ -59,7 +60,8 @@ gulp.task('styles-admin', function () {
     return gulp.src([
         path.dev.admin.vendorCss,
         path.dev.admin.less,
-        path.dev.admin.blocks
+        path.dev.admin.blocks,
+        path.dev.admin.pages
     ])
     .pipe(concat('__main.less'))
     .pipe(less())
@@ -106,7 +108,7 @@ gulp.task('watch', function(){
 });
 
 gulp.task('watch-admin', function(){
-    watch([path.dev.admin.less, path.admin.site.blocks], function(event, cb) {
+    watch([path.dev.admin.less, path.dev.admin.pages, path.dev.admin.blocks], function(event, cb) {
         gulp.start('styles');
     });
 });

@@ -406,3 +406,23 @@ label + i {
 .table_all-sites__td_name {
   font-weight: 500;
 }
+.edit_site__image__row {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.edit_site__image__block {
+  margin-bottom: 10px;
+}
+.edit_site__image__block.image + .form-group {
+  display: none;
+}
+.edit_site__image__title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.edit_site__image__image {
+  max-width: 100%;
+}

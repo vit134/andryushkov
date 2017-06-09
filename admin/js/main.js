@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
     var $formAddSite = $('#form-addSite')
+    var $formEditSite = $('#form-editSite')
       , $formAddSiteSubmit = $('#form-addSite-submit')
+      , $formEditSiteSubmit = $('#form-editSite-submit')
       , $aliasField = $('#alias')
       , $siteNameField = $('#site_name')
       , $removeSiteButton = $('.remove-site-button')
@@ -11,7 +13,9 @@ $(document).ready(function() {
     function init() {
         bindEvents();
 
-        $('#date_create').datetimepicker({locale: 'ru'});
+        $('#date_create').datetimepicker({
+            locale: 'ru'
+        });
         $allSitesTable.tablesorter();
     }
 
@@ -30,7 +34,7 @@ $(document).ready(function() {
         var data = new FormData();
 
 
-        $('.file-input').each(function(i) {
+        $('.file-input').each(function() {
             data.append($(this).attr('name'), $(this)[0].files[0])
         })
 
@@ -42,7 +46,7 @@ $(document).ready(function() {
     }
 
     function clearFormfields($form) {
-        var $fields = $form.find('input');
+        var $fields = $form.find('input:visible');
         $fields.val('');
     }
 
@@ -113,7 +117,7 @@ $(document).ready(function() {
                     },
                     success: function(e){
                         //console.log(JSON.parse(e));
-                        //console.log(e);
+                        console.log(e);
 
                         /*e = JSON.parse(e);*/
                         var status = e.status;
@@ -123,6 +127,49 @@ $(document).ready(function() {
                             clearFormfields($formAddSite);
                         } else {
                             showAlert($('.alert-addSite'), 'danger', 'not success');
+                        }
+                    },
+                    error: function( jqXHR, textStatus, errorThrown ) {
+                       console.log('error');
+                       console.log(jqXHR);
+                       console.log(textStatus);
+                       console.log(errorThrown);
+                    }
+                });
+            }
+        })
+
+        $formEditSite.validator({disable: true}).on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                //$formAddSiteSubmit.attr('disabled', 'disabled');
+            } else {
+                e.preventDefault();
+
+                var formData = getFormfields($formEditSite);
+
+                $.ajax({
+                    url: '/admin/core/edit_site.php',
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    dataType: 'json',
+                    data: formData,
+                    beforeSend: function() {
+                        console.log(formData);
+                    },
+                    success: function(e){
+                        //console.log(JSON.parse(e));
+                        console.log(e);
+
+                        /*e = JSON.parse(e);*/
+                        var status = e.status;
+
+                        if (e.status === 'success') {
+                            showAlert($('.alert-editSite'), 'success', 'success');
+                            clearFormfields($formAddSite);
+                        } else {
+                            showAlert($('.alert-editSite'), 'danger', 'not success');
                         }
                     },
                     error: function( jqXHR, textStatus, errorThrown ) {
@@ -171,7 +218,7 @@ $(document).ready(function() {
 
 
         $(function(){
-            $siteNameField.on('keyup', function(){
+            $siteNameField.on('keyup load', function(){
                 translit($(this), $aliasField);
                 return false;
             });
@@ -196,7 +243,7 @@ $(document).ready(function() {
         $alert.show().alert();
 
         setTimeout(function() {
-            $alert.alert('close')
+            $alert.hide();
         }, 5000)
     }
 

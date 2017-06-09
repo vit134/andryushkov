@@ -23,4 +23,40 @@
 
         return array_search($type, $mysql_data_type);
     }
+
+    function getSiteTypes() {
+        global $mysqli, $indexData;
+
+        $siteTypesQuery = "SELECT `type_name` FROM `site_types`";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        foreach ($siteTypesResult as $row) {
+            $indexData['site_types'][] = implode(' ', $row);
+        }
+    }
+
+    function getUsers() {
+        global $mysqli, $indexData;
+
+        $usersQuery = "SELECT `first_name`, `last_name` FROM `users`";
+
+        $userResult = $mysqli->query($usersQuery);
+
+        foreach ($userResult as $row) {
+            $indexData['users'][] = implode(' ', $row);
+        }
+    }
+
+    function getSite() {
+        global $mysqli, $indexData;
+
+        $siteTypesQuery = "SELECT * FROM `sites`";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        foreach ($siteTypesResult as $key => $row) {
+            foreach ($row as $keyRow => $valueRow) {
+                $indexData['sites'][$key][$keyRow] = $valueRow;
+            }
+        }
+    }
 ?>
