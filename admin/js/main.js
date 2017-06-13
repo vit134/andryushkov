@@ -8,6 +8,8 @@ $(document).ready(function() {
       , $siteNameField = $('#site_name')
       , $removeSiteButton = $('.remove-site-button')
       , $allSitesTable = $('.table_all-sites')
+      , $removePreviewImage = $('.js-remove-preview-image')
+      , tags = $('.js-tag-item')
       ;
 
     function init() {
@@ -17,17 +19,20 @@ $(document).ready(function() {
             locale: 'ru'
         });
         $allSitesTable.tablesorter();
+
+        $('#tags').liveSearch({
+            tags: $('.js-tag-item')
+        });
     }
 
-    /*function getFormfields($form) {
-        var $fields = $form.find('input, select');
-        var data = {};
-        $fields.each(function() {
-            data[$(this).attr('name')] = $(this).val();
+    function getTags() {
+        var tagsArr = [];
+        tags.each(function() {
+            tagsArr.push($(this).html().toLowerCase());
         })
 
-        return data;
-    }*/
+        return tagsArr;
+    }
 
     function getFormfields($form) {
         var $fields = $form.find('input, select');
@@ -216,6 +221,53 @@ $(document).ready(function() {
             }
         })
 
+        $removePreviewImage.on('click', function() {
+            $(this).parent().remove();
+        })
+
+        /*$('.js-tag-item').each(function(){
+            $(this).attr('data-search-term', $(this).text().toLowerCase());
+        });
+
+        $('#tags').on('keyup', function(){
+
+            var searchTerm = $(this).val().toLowerCase();
+
+            setTimeout(function() {
+                $('.tags-list').show();
+            }, 1000)
+
+            setTimeout(function() {
+                $('.tags-list').hide();
+            }, 6500)
+
+            $('.js-tag-item').each(function(){
+                if (!$(this).hasClass('add')) {
+                    if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                }
+
+            });
+
+        });
+
+        $('.js-tag-item').on('click', function() {
+            var offset = $('#tags').attr('data-offset');
+
+            $(this).addClass('add').css({
+                position: 'absolute',
+                top: '-29px',
+                left: offset + 'px'
+            })
+
+            $('#tags').focus()
+                .css('padding-left', +(offset) + $(this).outerWidth() + 10 + 'px')
+                .attr('data-offset', +(offset) + $(this).outerWidth() + 10)
+                .val('');
+        })*/
 
         $(function(){
             $siteNameField.on('keyup load', function(){
@@ -255,4 +307,74 @@ $(document).ready(function() {
 
 
 
-})
+});
+
+//Plugins
+
+
+(function( $ ){
+
+    $.fn.liveSearch = function( options ) {
+
+        var settings = $.extend( {
+            input: this,
+            tags: $('.liveSearch-tags'),
+            tagsMargin: 10,
+            showTimeout: 1000,
+            hideTimeOut: 6500
+        }, options);
+
+        return this.each(function() {
+            var $this = $(this);
+
+            settings.tags.each(function(){
+                $(this).attr('data-search-term', $(this).text().toLowerCase());
+            });
+
+
+            $this.on('keyup', function(){
+
+                var searchTerm = $(this).val().toLowerCase();
+
+                setTimeout(function() {
+                    $('.tags-list').show();
+                }, options.showTimeout)
+
+                /*setTimeout(function() {
+                    $('.tags-list').hide();
+                }, settings.hideTimeOut)*/
+
+                settings.tags.each(function(){
+                    if (!$(this).hasClass('add')) {
+                        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    }
+
+                });
+
+            });
+
+            settings.tags.on('click', function() {
+                var offset = $('#tags').attr('data-offset');
+
+                $(this).addClass('add').css({
+                    position: 'absolute',
+                    top: '-39px',
+                    left: offset + 'px'
+                })
+
+                $this.focus()
+                    .css('padding-left', +(offset) + $(this).outerWidth() + 10 + 'px')
+                    .attr('data-offset', +(offset) + $(this).outerWidth() + 10)
+                    .val('');
+            })
+
+
+        });
+
+
+    };
+})( jQuery );

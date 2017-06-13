@@ -35,6 +35,17 @@
         }
     }
 
+    function getSiteTags() {
+        global $mysqli, $indexData;
+
+        $siteTypesQuery = "SELECT `tag_name` FROM `site_tags`";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        foreach ($siteTypesResult as $key => $row) {
+            $indexData['site_tags'][] = implode(' ', $row);
+        }
+    }
+
     function getUsers() {
         global $mysqli, $indexData;
 

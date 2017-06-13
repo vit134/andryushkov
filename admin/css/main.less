@@ -54,3 +54,49 @@ label + i {
         }
     }
 }
+
+/*input#tags:focus + .tags-list {
+    display: block;
+}*/
+
+.tags-list {
+    display: none;
+    position: absolute;
+    top: calc(~'100% + 10px');
+    left: 0;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 9;
+
+    & ul {
+        margin: 0;
+        padding: 0;
+
+        & li {
+            display: inline-block;
+            vertical-align: middle;
+            list-style: none;
+            padding: 2px 5px;
+            margin-right: 10px;
+            font-size: 14px;
+            border-radius: 3px;
+            background-color: #eee;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &.add {
+                background-color: #a9a9a9;
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*.tags-search-result {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    background-color: rgba(122,122,122, 0.4);
+    height: 33px;
+    width: calc(~'100% - 20px');
+}*/

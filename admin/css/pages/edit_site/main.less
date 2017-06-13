@@ -7,11 +7,26 @@
         }
 
         &__block {
+            position: relative;
             margin-bottom: 15px;
 
             &.image + .form-group {
                 display: none;
             }
+
+            /*&:hover {
+                filter: blur(2px);
+            }*/
+        }
+
+        &__remove-image {
+            position: absolute;
+            display: block;
+            top: 10px;
+            right: 10px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #fff;
         }
 
         &__title {

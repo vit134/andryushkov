@@ -44,7 +44,7 @@
         }
 
         $filesArr[$key] = array(
-            'path'=> $path,
+            'path'=> '/uploads/' . $formFields['alias'] . '/' . $file["name"],
             'file'=> $file
         );
     }
@@ -63,13 +63,14 @@
             `usability_raiting` = '". $formFields['usability_raiting'] ."',
             `creativity_raiting`= '". $formFields['creativity_raiting'] ."',
             `speed_raiting`     = '". $formFields['speed_raiting'] ."',
-            `alias`             = '". $formFields['alias'] ."'
+            `alias`             = '". $formFields['alias'] ."',
+            `tags`             = '". $formFields['tags'] ."'
 
         WHERE `id`=" . $formFields['site_id'];
 
         if ($filesArr['small_img_file']['path'] != '') {
             $addSmallImgQuery = "UPDATE `sites` SET
-                `small_img_file` = '". $formFields['small_img_file'] ."'
+                `small_img_file` = '". $filesArr['small_img_file']['path'] ."'
             WHERE `id`=" . $formFields['site_id'];
 
             if ($mysqli->query($addSmallImgQuery)) {
@@ -79,7 +80,7 @@
             }
         } else if ($filesArr['big_img_file']['path'] != '') {
             $addBigImgQuery = "UPDATE `sites` SET
-                `big_img_file` = '". $formFields['big_img_file'] ."'
+                `big_img_file` = '". $filesArr['big_img_file']['path'] ."'
             WHERE `id`=" . $formFields['site_id'];
 
             if ($mysqli->query($addBigImgQuery)) {

@@ -65,7 +65,8 @@
             `alias`,
             `big_img_file`,
             `small_img_file`,
-            `link`
+            `link`,
+            `tags`
         )
          VALUES (
             '',
@@ -81,7 +82,8 @@
             '". $formFields['alias'] ."',
             '". $filesArr['big_img_file']['path'] ."',
             '". $filesArr['small_img_file']['path'] ."',
-            '". $formFields['link'] ."'
+            '". $formFields['link'] ."',
+            '". $formFields['tags'] ."'
         )";
 
 

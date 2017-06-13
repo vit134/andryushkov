@@ -40,6 +40,7 @@
         global $route;
 
         getSiteTypes();
+        getSiteTags();
         getUsers();
         getSite();
         $route = route();
@@ -48,6 +49,10 @@
     }
 
     init();
+
+    /*echo '<pre>';
+    var_dump($indexData);
+    echo '</pre>';*/
 ?>
 
 
@@ -91,7 +96,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">Admin Panel</a>
+                    <a class="navbar-brand" href="/admin">Admin Panel</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -102,7 +107,21 @@
                             <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new site<span class="sr-only">(current)</span></a></li>
                           </ul>
                         </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
+                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Groups<span class="sr-only">(current)</span></a></li>
+                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new user<span class="sr-only">(current)</span></a></li>
+                          </ul>
+                        </li>
                     </ul>
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
                 </div>
               </div>
             </nav>
@@ -197,7 +216,6 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <label for="site_author">Site author</label>
-                                                <!-- <input type="text" class="form-control" name="site_author" id="site_author" placeholder="Site author"> -->
                                                 <select class="form-control" name="site_author" id="site_author" placeholder="Site author">
                                                     <?php
                                                         for ($i = 0; count($indexData['users']) > $i;++$i) {
@@ -217,6 +235,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="tags">Tags</label>
+                                        <input value="" type="text" class="form-control" name="tags" id="tags" data-offset="10" placeholder="" >
+                                        <div class="tags-list">
+                                            <ul>
+                                                <?php
+                                                    for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
+                                                        echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                    }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <div class="tags-search-result"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -226,7 +258,7 @@
                             </div>
                         </form>
                     </div>
-                <? } else if ($route == 'edit_site' || route() == '') { ?>
+                <? } else if ($route == 'edit_site') { ?>
                     <div class="row">
                         <h2>Edit site</h3>
                     </div>
@@ -330,12 +362,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="tags">Tags</label>
+                                        <input value="<?php echo $indexData['edit_site']['tags'] ?>" type="text" class="form-control" name="tags" id="tags" data-offset="0" placeholder="" >
+                                        <div class="tags-list">
+                                            <ul>
+                                                <?php
+                                                    for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
+                                                        echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                    }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <div class="tags-search-result"></div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-4  col-lg-offset-1">
                                     <div class="row edit-site__image__row">
                                         <div class="edit_site__image__title">Big File</div>
                                         <div class="edit_site__image__block <?php if ($indexData['edit_site']['big_img_file'] != '') echo 'image' ?>">
                                             <img class="edit_site__image__image" src="<?php echo $indexData['edit_site']['big_img_file'] ?>">
+                                            <div class="edit_site__image__remove-image js-remove-preview-image"><span class="glyphicon glyphicon-trash"></span></div>
                                         </div>
                                         <div class="form-group">
                                             <input type="file" id="big_img_file" name="big_img_file" class="file-input">
@@ -346,9 +393,10 @@
                                         <div class="edit_site__image__title">Small File</div>
                                         <div class="edit_site__image__block <?php if ($indexData['edit_site']['small_img_file'] != '') echo 'image' ?>">
                                             <img class="edit_site__image__image" src="<?php echo $indexData['edit_site']['small_img_file'] ?>">
+                                            <div class="edit_site__image__remove-image js-remove-preview-image"><span class="glyphicon glyphicon-trash"></span></div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="file" id="big_img_file" name="big_img_file" class="file-input">
+                                            <input type="file" id="small_img_file" name="small_img_file" class="file-input">
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                     </div>
