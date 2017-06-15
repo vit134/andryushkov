@@ -7,6 +7,7 @@ $(document).ready(function() {
       , $mainmenu = $('.js-main-menu')
       , $toplineMenuButton = $('.js-main-menu-button')
       , $closeMainMenuButton = $('.js-close-main-menu')
+      , $upButton = $('.js-up-button')
       ;
 
     function init() {
@@ -23,6 +24,14 @@ $(document).ready(function() {
         $closeMainMenuButton.on('click', function() {
             $mainmenu.removeClass('open');
             $lWindow.removeClass('open')
+        })
+
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 500) {
+                $upButton.addClass('open')
+            } else {
+                $upButton.removeClass('open')
+            }
         })
     }
 

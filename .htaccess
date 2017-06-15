@@ -1,0 +1,11 @@
+AddType text/x-component .htc
+
+Options -Indexes
+Options -MultiViews
+Options +FollowSymLinks
+
+DirectoryIndex index.php
+
+RewriteEngine on
+
+RewriteRule ^index1.php$ - [L]

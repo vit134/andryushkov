@@ -4,6 +4,11 @@
     background-color: #F4F7F6;
     font-size: 0;
     border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
 
     &__col {
         display: inline-block;
@@ -21,6 +26,7 @@
 
     &__right-side {
         width: 40%;
+        text-align: right;
     }
 
     &__logo {
@@ -44,9 +50,33 @@
             font-weight: 700;
             cursor: pointer;
         }
+
         &_search {
             padding: 0 15px;
             cursor: pointer;
+        }
+
+        &_login {
+            padding: 0 15px;
+            margin-right: 0;
+            transition: All .8s ease;
+        }
+
+        &_up.open + &_login {
+            margin-right: 65px;
+        }
+
+        &_up {
+            position: absolute;
+            right: -65px;
+            width: 65px;
+            text-align: center;
+            background-color: #42ab9e;
+            transition: All .8s ease;
+
+            &.open {
+                right: 0;
+            }
         }
     }
 
@@ -64,6 +94,11 @@
 
         &_search {
             background: url('@{blockPath}header/images/search.svg') center no-repeat;
+            background-size: 100%;
+        }
+
+        &_up {
+            background: url('@{blockPath}header/images/up.svg') center no-repeat;
             background-size: 100%;
         }
     }
