@@ -1,6 +1,7 @@
 <?php
     define('SITE_PATH', realpath(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR);
 
+
     function getMysqlFieldType($type) {
         $mysql_data_type = array(
             'tinyint' => 1,
@@ -66,8 +67,16 @@
 
         foreach ($siteTypesResult as $key => $row) {
             foreach ($row as $keyRow => $valueRow) {
-                $indexData['sites'][$key][$keyRow] = $valueRow;
+                if ($keyRow == 'tags' && $valueRow != '') {
+                    $tags = explode(',', trim($valueRow));
+                    $indexData['sites'][$key][$keyRow] = $tags;
+                } else {
+                    $indexData['sites'][$key][$keyRow] = $valueRow;
+                }
+
             }
         }
+
+        return $indexData['sites'];
     }
 ?>

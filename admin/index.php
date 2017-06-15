@@ -154,8 +154,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="small_img_file">Small File input</label>
-                                           <input type="file" id="small_img_file" name="small_img_file" class="file-input">
-                                           <p class="help-block">Example block-level help text here.</p>
+                                        <input type="file" id="small_img_file" name="small_img_file" class="file-input">
+                                        <p class="help-block">820x625 px</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

@@ -1,0 +1,13 @@
+{% block header %}
+    {% include 'header.html' %}
+    {% include 'main-menu.html' %}
+
+{% endblock %}
+
+<div class="l-window js-l-window">
+    {% include 'topline.html' %}
+
+    {% block content %}
+        <pre>{{ dump(data) }}</pre>
+    {% endblock %}
+</div>

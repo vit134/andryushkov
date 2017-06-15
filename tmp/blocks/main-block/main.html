@@ -1,0 +1,82 @@
+<div class="main-block">
+    <div class="main-block__bg" style="background-image: url('{{ item.big_img_file }}')">
+        <!-- <img src="http://placehold.it/1920x650"> -->
+    </div>
+    <a href="/pages/sites?site={{ item.alias }}" class="main-block__link"></a>
+    <div class="main-block__wrapper">
+        <div class="main-block__head">
+            <div class="main-block__col main-block__col_left"><span class="main-block__date">Site of the day /</span><span class="main-block__date__val"> {{ "now"|date("d M, Y") }}</span></div>
+            <div class="main-block__col main-block__col_right">
+                <ul class="main-block__like-user">
+                    <li class="main-block__like-user__item">
+                        <a href="#">
+                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
+                        </a>
+                    </li>
+                    <li class="main-block__like-user__item">
+                        <a href="#">
+                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
+                        </a>
+                    </li>
+                    <li class="main-block__like-user__item">
+                        <a href="#">
+                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
+                        </a>
+                    </li>
+                    <li class="main-block__like-user__item">
+                        <a href="#">
+                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
+                        </a>
+                    </li>
+                    <li class="main-block__like-user__item">
+                        +<span class="main-block__like-user__count">21</span>
+                    </li>
+                    <li class="main-block__like-user__item">
+                        <span class="main-block__like-user__add">+</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-block__content">
+            <a href="/pages/sites?site={{ item.alias }}" class="main-block__content__title">{{ item.name }}</a>
+            <div class="main-block__content__subtitle">by <a href="#" class="main-block__content__subtitle__developer">{{ item.author }}</a> from Russia</div>
+            <div class="main-block__raiting">
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.design_raiting }}" data-size="80" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Design</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.usability_raiting }}" data-size="80" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Usability</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.creativity_raiting }}" data-size="80" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Creativity</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.speed_raiting }}" data-size="80" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Speed</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-block__footer">
+            <div class="main-block__col main-block__col_left">
+                <div class="main-block__footer__links">
+                    <a href="#" class="main-block__footer__link">See case</a>
+                    <a href="http://{{ item.link }}" target="_blank" class="main-block__footer__link">Visit website</a>
+                </div>
+            </div>
+            <div class="main-block__col main-block__col_right">
+                <a href="#"><i class="main-block__share"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

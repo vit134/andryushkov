@@ -126,67 +126,12 @@ a {
   min-height: 100%;
   transition: All 0.5s ease;
 }
-.content {
-  min-height: 500px;
-}
-.content__wrapper {
-  padding: 40px 60px 0;
-}
-.content__head {
-  font-size: 0;
-  margin-bottom: 40px;
-}
-.content__head__col {
-  display: inline-block;
-  vertical-align: middle;
-  width: 50%;
-  font-size: 16px;
-}
-.content__head__col:last-child {
-  text-align: right;
-}
-.content__head__sort__name {
-  display: inline-block;
-  position: relative;
-  font-size: 18px;
-  font-weight: 900;
-}
-.content__head__sort__name:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  bottom: -3px;
-  left: 0;
-  background-color: #000;
-}
-.content__grid {
-  clear: both;
-  margin-left: -35px;
-}
-.content__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.content__col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  float: left;
-  padding-left: 35px;
-  padding-bottom: 35px;
-  box-sizing: border-box;
-  width: 25%;
-}
 .header {
   height: 65px;
   line-height: 65px;
   background-color: #F4F7F6;
   font-size: 0;
+  border-bottom: 1px solid #eee;
 }
 .header__col {
   display: inline-block;
@@ -252,6 +197,8 @@ a {
 }
 .item-medium__content {
   padding: 20px;
+  box-sizing: border-box;
+  min-height: 120px;
 }
 .item-medium__name {
   font-weight: 900;
@@ -278,6 +225,8 @@ a {
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  text-align: center;
+  min-width: 30px;
 }
 .item-medium__tag:hover {
   color: #fff;
@@ -618,4 +567,60 @@ a {
 }
 .switch-input .slider.round:before {
   border-radius: 50%;
+}
+.content {
+  min-height: 500px;
+}
+.content__wrapper {
+  padding: 40px 60px 0;
+}
+.content__head {
+  font-size: 0;
+  margin-bottom: 40px;
+}
+.content__head__col {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  font-size: 16px;
+}
+.content__head__col:last-child {
+  text-align: right;
+}
+.content__head__sort__name {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  font-weight: 900;
+}
+.content__head__sort__name:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+}
+.content__grid {
+  clear: both;
+  margin-left: -35px;
+}
+.content__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.content__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  float: left;
+  padding-left: 35px;
+  padding-bottom: 35px;
+  box-sizing: border-box;
+  width: 25%;
 }
