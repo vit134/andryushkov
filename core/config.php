@@ -2,6 +2,10 @@
     define('SITE_PATH', realpath(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR);
 
 
+    function getUrl($url) {
+        return array_splice(explode('/', $url), 1);
+    }
+
     function getMysqlFieldType($type) {
         $mysql_data_type = array(
             'tinyint' => 1,
@@ -23,6 +27,13 @@
         );
 
         return array_search($type, $mysql_data_type);
+    }
+
+    function getlatestSite ($mysqli) {
+        $query = 'SELECT * FROM `sites` ORDER BY `date_create` DESC LIMIT 1';
+        $result = $mysqli->query($query);
+
+        return $result->fetch_array(MYSQLI_ASSOC);
     }
 
     function getSiteTypes() {
@@ -70,6 +81,9 @@
                 if ($keyRow == 'tags' && $valueRow != '') {
                     $tags = explode(',', trim($valueRow));
                     $indexData['sites'][$key][$keyRow] = $tags;
+                } else if ($keyRow == 'colors' && $valueRow != '') {
+                    $colors = explode(',', trim($valueRow));
+                    $indexData['sites'][$key][$keyRow] = $colors;
                 } else {
                     $indexData['sites'][$key][$keyRow] = $valueRow;
                 }

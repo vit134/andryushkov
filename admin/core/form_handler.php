@@ -66,7 +66,8 @@
             `big_img_file`,
             `small_img_file`,
             `link`,
-            `tags`
+            `tags`,
+            `colors`
         )
          VALUES (
             '',
@@ -83,7 +84,8 @@
             '". $filesArr['big_img_file']['path'] ."',
             '". $filesArr['small_img_file']['path'] ."',
             '". $formFields['link'] ."',
-            '". $formFields['tags'] ."'
+            '". $formFields['tags'] ."',
+            '". $formFields['colors'] ."'
         )";
 
 

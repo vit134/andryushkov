@@ -28,6 +28,7 @@ var path = {
             js: 'js/main.js',
             less: 'css/*.less',
             blocks: 'css/blocks/*/*.less',
+            pages: 'css/pages/*/*.less',
             vendorCss: 'css/vendor/*.css'
         },
         admin: {
@@ -44,7 +45,8 @@ gulp.task('styles', function () {
     return gulp.src([
         path.dev.site.vendorCss,
         path.dev.site.less,
-        path.dev.site.blocks
+        path.dev.site.blocks,
+        path.dev.site.pages
     ])
     .pipe(concat('__main.less'))
     .pipe(less())

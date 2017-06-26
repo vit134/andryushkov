@@ -1,8 +1,8 @@
-<div class="main-block">
+<div class="main-block {{ cssClass }}">
     <div class="main-block__bg" style="background-image: url('{{ item.big_img_file }}')">
         <!-- <img src="http://placehold.it/1920x650"> -->
     </div>
-    <a href="/pages/sites?site={{ item.alias }}" class="main-block__link"></a>
+    <a href="site/{{ item.alias }}" class="main-block__link"></a>
     <div class="main-block__wrapper">
         <div class="main-block__head">
             <div class="main-block__col main-block__col_left"><span class="main-block__date">Site of the day /</span><span class="main-block__date__val"> {{ "now"|date("d M, Y") }}</span></div>

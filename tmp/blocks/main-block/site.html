@@ -1,0 +1,35 @@
+<div class="main-block {{ cssClass }}">
+    <div class="main-block__bg" style="background-image: url('{{ item.big_img_file }}')"></div>
+    <div class="main-block__wrapper">
+        <div class="main-block__content">
+            <a href="/pages/sites?site={{ item.alias }}" class="main-block__content__title">{{ item.name }}</a>
+            <div class="main-block__content__subtitle">by <a href="#" class="main-block__content__subtitle__developer">{{ item.author }}</a> from Russia</div>
+            <div class="main-block__raiting">
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.design_raiting }}" data-size="80" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Design</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.usability_raiting }}" data-size="80" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Usability</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.creativity_raiting }}" data-size="80" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Creativity</div>
+                </div>
+                <div class="main-block__raiting__item">
+                    <div class="main-block__raiting__circle js-circle-progress">
+                        <div class="chart graph" data-percent="{{ item.speed_raiting }}" data-size="80" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                    </div>
+                    <div class="main-block__raiting__name">Speed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

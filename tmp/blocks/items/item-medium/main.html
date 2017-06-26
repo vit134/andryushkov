@@ -1,23 +1,29 @@
 {#<pre>{{ dump(item.tags | length) }}</pre>#}
 <div class="item-medium">
     <div class="item-medium__inner">
-        <a href="/pages/sites?site={{ item.alias }}" class="item-medium">
+        <a href="/site/{{ item.alias }}" class="item-medium">
             <img src="{{ item.small_img_file }}" class="item-medium__img">
         </a>
         <div class="item-medium__content">
-            <a href="/pages/sites?site={{ item.alias }}" class="item-medium__name">{{ item.name }}</a>
+            <a href="/site/{{ item.alias }}" class="item-medium__name">{{ item.name }}</a>
             <div class="item-medium__date">{{ item.date_create | date("d M, Y") }}</div>
 
-            {% if item.tags and item.tags|length != 0 %}
+            {% if item.tags and item.tags | length != 0 %}
                 <div class="item-medium__tags">
                     {% for tag in item.tags %}
                         <a href="#" class="item-medium__tag">{{ tag }}</a>
                     {% endfor %}
                 </div>
             {% endif %}
-            <div class="item-medium__colors">
-
-            </div>
+            {% if item.colors and item.colors | length != 0 %}
+                <div class="item-medium__colors">
+                    {% for color in item.colors %}
+                        {% if loop.index < 3 %}
+                            <a href="#" class="item-medium__color" style="background-color: {{ color }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>

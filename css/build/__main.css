@@ -239,6 +239,7 @@ a {
   padding: 0 15px;
   margin-right: 0;
   transition: All .8s ease;
+  text-transform: none;
 }
 .header__item_up.open + .header__item_login {
   margin-right: 65px;
@@ -250,6 +251,8 @@ a {
   text-align: center;
   background-color: #42ab9e;
   transition: All .8s ease;
+  height: calc(100% + 1px);
+  cursor: pointer;
 }
 .header__item_up.open {
   right: 0;
@@ -339,75 +342,6 @@ a {
 }
 .item-medium__color:last-child {
   margin-right: 0;
-}
-.main-menu {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 320px;
-  height: 100%;
-  background-color: #F4F7F6;
-  left: -320px;
-  transition: All 0.5s ease;
-  border-right: 1px solid #eee;
-}
-.main-menu.open {
-  left: 0;
-}
-.main-menu.open + .l-window {
-  position: fixed;
-  -webkit-transform: translateX(320px);
-  transform: translateX(320px);
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
-}
-.main-menu__header {
-  height: 65px;
-  line-height: 65px;
-  background-color: #F4F7F6;
-  font-size: 0;
-  padding: 0 15px 0 25px;
-  border-bottom: 1px solid #eee;
-}
-.main-menu__header .close-main-menu {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-  background: url('../../css/blocks//main-menu/images/close.svg') center no-repeat;
-  background-size: 100%;
-  cursor: pointer;
-}
-.main-menu__header__col {
-  display: inline-block;
-  vertical-align: middle;
-  width: 50%;
-}
-.main-menu__header__col:last-child {
-  text-align: right;
-}
-.main-menu__item {
-  display: block;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  transition: All .2s ease;
-}
-.main-menu__item a {
-  display: block;
-  height: 100%;
-  color: #707070;
-  font-size: 16px;
-  font-weight: 900;
-  padding: 20px 15px 20px 25px;
-}
-.main-menu__item a:first-letter {
-  text-transform: uppercase;
-}
-.main-menu__item:hover {
-  background-color: #fbfbfb;
-}
-.main-menu__item.active a {
-  color: #42ab9e;
 }
 .main-block {
   position: relative;
@@ -598,6 +532,78 @@ a {
   background-color: #42ab9e;
   border-color: #42ab9e;
 }
+.main-block.light .main-block__bg:after {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.main-menu {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background-color: #F4F7F6;
+  left: -320px;
+  transition: All 0.5s ease;
+  border-right: 1px solid #eee;
+}
+.main-menu.open {
+  left: 0;
+}
+.main-menu.open + .l-window {
+  position: fixed;
+  -webkit-transform: translateX(320px);
+  transform: translateX(320px);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+.main-menu__header {
+  height: 65px;
+  line-height: 65px;
+  background-color: #F4F7F6;
+  font-size: 0;
+  padding: 0 15px 0 25px;
+  border-bottom: 1px solid #eee;
+}
+.main-menu__header .close-main-menu {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../css/blocks//main-menu/images/close.svg') center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.main-menu__header__col {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+.main-menu__header__col:last-child {
+  text-align: right;
+}
+.main-menu__item {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  transition: All .2s ease;
+}
+.main-menu__item a {
+  display: block;
+  height: 100%;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 20px 15px 20px 25px;
+}
+.main-menu__item a:first-letter {
+  text-transform: uppercase;
+}
+.main-menu__item:hover {
+  background-color: #fbfbfb;
+}
+.main-menu__item.active a {
+  color: #42ab9e;
+}
 .switch-input {
   /* Rounded sliders */
 }
@@ -654,4 +660,29 @@ a {
 }
 .switch-input .slider.round:before {
   border-radius: 50%;
+}
+.sites__main-img {
+  min-height: 650px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sites__wrapper {
+  position: relative;
+  top: -150px;
+  background-color: #F4F7F6;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 500px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.sites__title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0 auto;
+  line-height: 1;
+}
+.sites__title:first-letter {
+  text-transform: uppercase;
 }

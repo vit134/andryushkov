@@ -73,6 +73,17 @@
     <link rel="stylesheet" type="text/css" href="css/build/__main.css">
     <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea.tinyMce',
+            plugins: "code",
+            //toolbar: "code",
+            menubar: "tools"
+        });
+    </script>
+
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body class="<?php echo $route ?>">
@@ -238,17 +249,36 @@
                                     <div class="form-group">
                                         <label for="tags">Tags</label>
                                         <input value="" type="text" class="form-control" name="tags" id="tags" data-offset="10" placeholder="" >
-                                        <div class="tags-list">
+                                        <!-- <div class="tags-list">
                                             <ul>
                                                 <?php
                                                     for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
-                                                        echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                        //echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
                                                     }
                                                 ?>
                                             </ul>
                                         </div>
-                                        <div class="tags-search-result"></div>
+                                        <div class="tags-search-result"></div> -->
                                     </div>
+                                    <div class="form-group">
+                                        <label for="colors">Colors</label>
+                                        <input value="" type="text" class="form-control" name="colors" id="colors" placeholder="" >
+                                        <!-- <div class="tags-list">
+                                            <ul>
+                                                <?php
+                                                    for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
+                                                        //echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                    }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <div class="tags-search-result"></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <textarea class="tinyMce">Next, get a free TinyMCE Cloud API key!</textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -365,16 +395,30 @@
                                     <div class="form-group">
                                         <label for="tags">Tags</label>
                                         <input value="<?php echo $indexData['edit_site']['tags'] ?>" type="text" class="form-control" name="tags" id="tags" data-offset="0" placeholder="" >
-                                        <div class="tags-list">
+                                        <!-- <div class="tags-list">
                                             <ul>
                                                 <?php
                                                     for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
-                                                        echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                        //echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
                                                     }
                                                 ?>
                                             </ul>
                                         </div>
-                                        <div class="tags-search-result"></div>
+                                        <div class="tags-search-result"></div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="colors">Colors</label>
+                                        <input value="<?php echo $indexData['edit_site']['colors'] ?>" type="text" class="form-control" name="colors" id="colors" placeholder="" >
+                                        <!-- <div class="tags-list">
+                                            <ul>
+                                                <?php
+                                                    for ($i = 0; count($indexData['site_tags']) > $i;++$i) {
+                                                        //echo '<li class="tags-list__item js-tag-item">' . $indexData['site_tags'][$i] . '</li>';
+                                                    }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                        <div class="tags-search-result"></div> -->
                                     </div>
                                 </div>
                                 <div class="col-lg-4  col-lg-offset-1">

@@ -8,6 +8,11 @@
     {% include 'topline.html' %}
 
     {% block content %}
-        <pre>{{ dump(data) }}</pre>
+        <!-- <div class="sites__main-img" style="background-image: url({{ data.big_img_file }})"></div> -->
+        {% include 'blocks/main-block/site.html' with {cssClass: 'light', item: data } %}
+        <div class="sites__wrapper">
+            <h2 class="sites__title">{{ data.name }}</h2>
+            <pre>{{ dump(data) }}</pre>
+        </div>
     {% endblock %}
 </div>

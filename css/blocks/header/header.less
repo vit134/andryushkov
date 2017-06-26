@@ -60,6 +60,7 @@
             padding: 0 15px;
             margin-right: 0;
             transition: All .8s ease;
+            text-transform: none;
         }
 
         &_up.open + &_login {
@@ -73,6 +74,8 @@
             text-align: center;
             background-color: #42ab9e;
             transition: All .8s ease;
+            height: calc(~'100% + 1px');
+            cursor: pointer;
 
             &.open {
                 right: 0;

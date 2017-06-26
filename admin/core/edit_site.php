@@ -64,7 +64,8 @@
             `creativity_raiting`= '". $formFields['creativity_raiting'] ."',
             `speed_raiting`     = '". $formFields['speed_raiting'] ."',
             `alias`             = '". $formFields['alias'] ."',
-            `tags`             = '". $formFields['tags'] ."'
+            `tags`             = '". $formFields['tags'] ."',
+            `colors`             = '". $formFields['colors'] ."'
 
         WHERE `id`=" . $formFields['site_id'];
 

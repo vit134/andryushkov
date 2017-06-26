@@ -11,20 +11,40 @@
 
     $twig->addExtension(new Twig_Extension_Debug());
 
-    function getlatestSite ($mysqli) {
-        $query = 'SELECT * FROM `sites` ORDER BY `date_create` DESC LIMIT 1';
-        $result = $mysqli->query($query);
-
-        return $result->fetch_array(MYSQLI_ASSOC);
-    }
-
-
     $data = array(
         'main_site' => getlatestSite($mysqli),
         'all_sites' => getSite()
     );
 
-    echo $twig->render('layout/layout_index.html', array('data' => $data));
+    //var_dump(getUrl($_SERVER['REQUEST_URI'])[0]);
+    $route = getUrl($_SERVER['REQUEST_URI']);
+    //echo $route;
+
+    if ($route[0] == "") {
+        echo $twig->render('layout/layout_index.html', array('data' => $data));
+    } else if ($route[0] == 'site'){
+        $id = $route[1];
+
+        $siteTypesQuery = "SELECT * FROM `sites` WHERE" . "'" . $id . "' in (`id`, `alias`)";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        foreach ($siteTypesResult as $key => $row) {
+            foreach ($row as $keyRow => $valueRow) {
+                if ($keyRow == 'tags' && $valueRow != '') {
+                    $tags = explode(',', trim($valueRow));
+                    $data['site'][$keyRow] = $tags;
+                } else {
+                    $data['site'][$keyRow] = $valueRow;
+                }
+
+            }
+        }
+
+        echo $twig->render('layout/layout_sites.html', array('data' => $data['site']));
+    }
+
+    /*echo $twig->render('layout/layout_index.html', array('data' => $data));
+    echo '<div class="bla">123</div>';*/
 ?>
 
 <!-- <?php
