@@ -18,7 +18,7 @@
     &__label {
         display: block;
         position: absolute;
-        top: 0;
+        top: -10px;
         font-size: 14px;
         transition: All .5s ease;
         z-index: 31;
@@ -37,6 +37,7 @@
             border-color: #F4F7F6;
             outline: none;
             z-index: 30;
+            color: #F4F7F6;
         }
 
         &_text {
@@ -45,12 +46,11 @@
     }
 
     &__input:focus + &__label {
-        top: -10px;
         color: #F4F7F6;
     }
 
     &__input:focus ~ &__overlay {
-        opacity: .8;
+        opacity: .6;
         z-index: 20;
     }
 

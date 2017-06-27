@@ -201,7 +201,7 @@ a {
 .filters__label {
   display: block;
   position: absolute;
-  top: 0;
+  top: -10px;
   font-size: 14px;
   transition: All .5s ease;
   z-index: 31;
@@ -218,16 +218,16 @@ a {
   border-color: #F4F7F6;
   outline: none;
   z-index: 30;
+  color: #F4F7F6;
 }
 .filters__input_text {
   border-bottom: 1px solid grey;
 }
 .filters__input:focus + .filters__label {
-  top: -10px;
   color: #F4F7F6;
 }
 .filters__input:focus ~ .filters__overlay {
-  opacity: .8;
+  opacity: .6;
   z-index: 20;
 }
 .filters__overlay {
