@@ -14,16 +14,18 @@
                 <div class="content__wrapper">
                     <div class="content__head">
                         <div class="content__head__col">
-                            <span class="content__head__sort__name">Last sites</span>
+                            <span class="content__head__sort__name"><a href="/all-site">Last sites</a></span>
                         </div>
                         <div class="content__head__col"></div>
                     </div>
                     <div class="content__grid">
                         <div class="content__body">
                             {% for item in data.all_sites %}
-                                <div class="content__col">
-                                    {% include 'blocks/items/item-medium/main.html' with { item: item } %}
-                                </div>
+                                {% if loop.index < 5 %}
+                                    <div class="content__col">
+                                        {% include 'blocks/items/item-medium/main.html' with { item: item } %}
+                                    </div>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>

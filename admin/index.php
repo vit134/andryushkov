@@ -15,7 +15,6 @@
     function getEditSiteData($id) {
         global $mysqli, $indexData;
 
-
         $editSiteQuery = 'SELECT * FROM `sites` WHERE `id`=' . $id;
 
         $editSiteResult = $mysqli->query($editSiteQuery);
@@ -28,11 +27,7 @@
 
     if ($_GET['page'] == 'edit_site') {
         $editSiteId = $_GET['id'];
-
         getEditSiteData($editSiteId);
-        /*echo '<pre>';
-        var_dump($indexData['edit_site']);
-        echo '</pre>';*/
     }
 
 
@@ -44,18 +39,10 @@
         getUsers();
         getSite();
         $route = route();
-
-
     }
 
     init();
-
-    /*echo '<pre>';
-    var_dump($indexData);
-    echo '</pre>';*/
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -74,13 +61,18 @@
     <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f9foeuegk6si50qwaywq64yw22vhjdyttykg62u831voqdoc"></script>
     <script>
         tinymce.init({
-            selector: 'textarea.tinyMce',
-            plugins: "code",
-            //toolbar: "code",
-            menubar: "tools"
+            selector: '.tinyMce',
+            plugins: 'code image imagetools',
+            //menubar: "insert",
+            //toolbar: "image, code",
+            image_list: [
+              {title: 'My image 1', value: '/uploads/test_colors/Desert.jpg'},
+              {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
+            ],
+            image_advtab: true
         });
     </script>
 
@@ -143,6 +135,12 @@
                     <div class="row">
                         <h2>Add new site</h3>
                     </div>
+                    <!-- <div class="row">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="active"><a href="#">Basic</a></li>
+                            <li role="presentation"><a href="#">Content</a></li>
+                        </ul>
+                    </div> -->
                     <div class="row">
                         <form id="form-addSite" data-toggle="validator" role="form">
                             <div class="row">
@@ -152,7 +150,6 @@
                                         <label for="site_name">Site name</label>
                                         <i>*</i>
                                         <input type="text" class="form-control" name="site_name" id="site_name" placeholder="Site name" required>
-
                                     </div>
                                     <div class="form-group">
                                         <label for="site_description">Site description</label>

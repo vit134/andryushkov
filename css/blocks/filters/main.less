@@ -1,0 +1,68 @@
+.filters {
+    margin-bottom: 35px;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+
+    &__item {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__label {
+        display: block;
+        position: absolute;
+        top: 0;
+        font-size: 14px;
+        transition: All .5s ease;
+        z-index: 31;
+    }
+
+    &__input {
+        position: relative;
+        background-color:#F4F7F6;
+        border: none;
+        height: 30px;
+
+
+        &:focus {
+            box-shadow: none;
+            background-color: inherit;
+            border-color: #F4F7F6;
+            outline: none;
+            z-index: 30;
+        }
+
+        &_text {
+            border-bottom: 1px solid grey;
+        }
+    }
+
+    &__input:focus + &__label {
+        top: -10px;
+        color: #F4F7F6;
+    }
+
+    &__input:focus ~ &__overlay {
+        opacity: .8;
+        z-index: 20;
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0;
+        z-index: -1;
+        transition: All .5s ease;
+    }
+}
