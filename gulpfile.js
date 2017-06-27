@@ -26,6 +26,7 @@ var path = {
     dev: {
         site: {
             js: 'js/main.js',
+            jsPages: 'js/pages/*/*.js',
             less: 'css/*.less',
             blocks: 'css/blocks/*/*.less',
             pages: 'css/pages/*/*.less',
@@ -77,15 +78,16 @@ gulp.task('styles-admin', function () {
 
 gulp.task('scripts', function () {
     return gulp.src([
-        path.dev.site.js
+        path.dev.site.js,
+        path.dev.site.jsPages
     ])
-    .pipe(concat('__main.js'))
-    .pipe(gulp.dest(path.build.site.scripts))
+    //.pipe(concat('__main.js'))
+    .pipe(gulp.dest(path.build.site.js))
     .pipe(uglify().on('error', function(e){
         console.log(e);
     }))
-    .pipe(rename('_main.js'))
-    .pipe(gulp.dest(path.build.site.scripts))
+    //.pipe(rename('_main.js'))
+    .pipe(gulp.dest(path.build.site.js))
 });
 
 gulp.task('scripts-admin', function () {

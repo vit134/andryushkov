@@ -8,7 +8,7 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 20px;
-
+        margin-top: 10px;
 
         &:last-child {
             margin-right: 0;
@@ -19,7 +19,8 @@
         display: block;
         position: absolute;
         top: -10px;
-        font-size: 14px;
+        font-size: 13px;
+        color: #616161;;
         transition: All .5s ease;
         z-index: 31;
     }
@@ -29,9 +30,9 @@
         background-color:#F4F7F6;
         border: none;
         height: 30px;
+        font-weight: bold;
 
-
-        &:focus {
+        &.active {
             box-shadow: none;
             background-color: inherit;
             border-color: #F4F7F6;
@@ -45,13 +46,17 @@
         }
     }
 
-    &__input:focus + &__label {
+    &__input.active + &__label {
         color: #F4F7F6;
     }
 
-    &__input:focus ~ &__overlay {
+    &__input.active ~ &__overlay {
         opacity: .6;
         z-index: 20;
+    }
+
+    &__input.active ~ &__dropdown {
+        display: block;
     }
 
     &__overlay {
@@ -64,5 +69,33 @@
         opacity: 0;
         z-index: -1;
         transition: All .5s ease;
+    }
+
+    &__dropdown {
+        display: none;
+        position: absolute;
+        top: calc(~'100% + 15px');
+        width: 250px;
+        max-height: 350px;
+        z-index: 30;
+        color: #F4F7F6;
+
+        & ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        & li {
+            display: none;
+            list-style: none;
+            display: block;
+            padding: 10px 5px;
+            border-bottom: 1px solid #F4F7F6;
+            cursor: pointer;
+
+            &:hover {
+                color: #bdbdbd;
+            }
+        }
     }
 }

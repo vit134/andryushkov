@@ -194,6 +194,7 @@ a {
   display: inline-block;
   vertical-align: middle;
   margin-right: 20px;
+  margin-top: 10px;
 }
 .filters__item:last-child {
   margin-right: 0;
@@ -202,7 +203,8 @@ a {
   display: block;
   position: absolute;
   top: -10px;
-  font-size: 14px;
+  font-size: 13px;
+  color: #616161;
   transition: All .5s ease;
   z-index: 31;
 }
@@ -211,8 +213,9 @@ a {
   background-color: #F4F7F6;
   border: none;
   height: 30px;
+  font-weight: bold;
 }
-.filters__input:focus {
+.filters__input.active {
   box-shadow: none;
   background-color: inherit;
   border-color: #F4F7F6;
@@ -223,12 +226,15 @@ a {
 .filters__input_text {
   border-bottom: 1px solid grey;
 }
-.filters__input:focus + .filters__label {
+.filters__input.active + .filters__label {
   color: #F4F7F6;
 }
-.filters__input:focus ~ .filters__overlay {
+.filters__input.active ~ .filters__overlay {
   opacity: .6;
   z-index: 20;
+}
+.filters__input.active ~ .filters__dropdown {
+  display: block;
 }
 .filters__overlay {
   width: 100%;
@@ -241,6 +247,30 @@ a {
   z-index: -1;
   transition: All .5s ease;
 }
+.filters__dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 15px);
+  width: 250px;
+  max-height: 350px;
+  z-index: 30;
+  color: #F4F7F6;
+}
+.filters__dropdown ul {
+  margin: 0;
+  padding: 0;
+}
+.filters__dropdown li {
+  display: none;
+  list-style: none;
+  display: block;
+  padding: 10px 5px;
+  border-bottom: 1px solid #F4F7F6;
+  cursor: pointer;
+}
+.filters__dropdown li:hover {
+  color: #bdbdbd;
+}
 .header {
   height: 65px;
   line-height: 65px;
@@ -251,7 +281,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 20;
 }
 .header__col {
   display: inline-block;
