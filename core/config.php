@@ -45,6 +45,8 @@
         foreach ($siteTypesResult as $row) {
             $indexData['site_types'][] = implode(' ', $row);
         }
+
+        return $indexData['site_types'];
     }
 
     function getSiteTags() {
@@ -68,6 +70,8 @@
         foreach ($userResult as $row) {
             $indexData['users'][] = implode(' ', $row);
         }
+
+        return $indexData['users'];
     }
 
     function getSite() {

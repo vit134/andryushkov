@@ -13,7 +13,9 @@
 
     $data = array(
         'main_site' => getlatestSite($mysqli),
-        'all_sites' => getSite()
+        'all_sites' => getSite(),
+        'site_type' => getSiteTypes(),
+        'site_author' => getUsers()
     );
 
     //var_dump(getUrl($_SERVER['REQUEST_URI'])[0]);
@@ -42,7 +44,7 @@
 
         echo $twig->render('layout/layout_site.html', array('data' => $data['site']));
     } else if ($route[0] == 'all-site') {
-        echo $twig->render('layout/layout_sites.html', array('data' => $data['all_sites']));
+        echo $twig->render('layout/layout_sites.html', array('data' => $data));
     }
 
     /*echo $twig->render('layout/layout_index.html', array('data' => $data));

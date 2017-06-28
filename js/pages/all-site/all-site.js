@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     var $liveSearchItem = $('.js-live-search-item')
       , $filterInput = $('.js-filter-input')
+      , $liveSearchFilterInput = $('.js-live-search-filter-input')
       , $filtersItem = $('.js-filters-item')
       , $overlay = $('.js-overlay')
       ;
@@ -12,7 +13,7 @@ $(document).ready(function() {
         $(this).attr('data-search-term', $(this).text().toLowerCase());
     });
 
-    $filterInput.on('keyup click', function(){
+    $liveSearchFilterInput.on('keyup click', function(){
 
         var searchTerm = $(this).val().toLowerCase();
 
@@ -26,7 +27,6 @@ $(document).ready(function() {
             } else {
                 $(this).hide();
             }
-
         });
 
     });

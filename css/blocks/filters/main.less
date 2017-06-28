@@ -51,12 +51,18 @@
     }
 
     &__input.active ~ &__overlay {
-        opacity: .6;
+        opacity: .7;
         z-index: 20;
     }
 
     &__input.active ~ &__dropdown {
         display: block;
+    }
+
+    &__input.visible ~ &__dropdown {
+        & li {
+            display: block;
+        }
     }
 
     &__overlay {
@@ -68,7 +74,7 @@
         background: #000;
         opacity: 0;
         z-index: -1;
-        transition: All .5s ease;
+        transition: opacity .5s ease;
     }
 
     &__dropdown {
