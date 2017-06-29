@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="row">
+        <h2>All sites</h2>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table_all-sites tablesorter">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Alias</th>
+                    <th>Date Create</th>
+                    <th>Author</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for site in data.sites %}
+                    <tr>
+                        <td>{{ site.id }}</td>
+                        <td class="table_all-sites__td_name">
+                            {% if site.link != '' %}
+                                <a href="{{ site.link }}" target="_blank">{{ site.name }}</a>
+                            {% else %}
+                                {{ site.name }}
+                            {% endif %}
+                        </td>
+                        <td>{{ site.description }}</td>
+                        <td>{{ site.type }}</td>
+                        <td>{{ site.alias }}</td>
+                        <td>{{ site.date_create }}</td>
+                        <td>{{ site.author }}</td>
+                        <td class="table_all-sites__td_icons">
+                            <a href="?page=edit_site&id={{ site.id }}" data-site-id="{{ site.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="" data-site-id="{{ site.id }}" class="table-icon"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            <a href="" data-site-id="{{ site.id }}" class="table-icon remove-site-button"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            <tbody>
+        </table>
+    </div>
+{% endblock %}
