@@ -49,6 +49,19 @@
         return $indexData['site_types'];
     }
 
+    function getTemplates() {
+        global $mysqli, $indexData;
+
+        $siteTypesQuery = "SELECT * FROM `templates`";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        foreach ($siteTypesResult as $key => $row) {
+            $indexData['templates'][$key] = $row;
+        }
+
+        return $indexData['templates'];
+    }
+
     function getSiteTags() {
         global $mysqli, $indexData;
 

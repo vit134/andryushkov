@@ -1,49 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="../js/vendor/jquery-3.2.1.min.js"></script>
+    <title>{% block pageTitle %}{% endblock %}</title>
 
+    <script type="text/javascript" src="/js/vendor/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
-    <script type="text/javascript" src="js/datetime-picker.min.js"></script>
-    <script type="text/javascript" src="js/moments-locale-ru.js"></script>
+    <script type="text/javascript" src="/admin/js/vendor/datetime-picker.min.js"></script>
+    <script type="text/javascript" src="/admin/js/vendor/moments-locale-ru.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/datetime-picker.min.css">
-    <link rel="stylesheet" type="text/css" href="css/build/__main.css">
-    <script type="text/javascript" src="js/validator.js"></script>
-    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <link rel="stylesheet" type="text/css" href="/admin/css/datetime-picker.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin/css/build/__main.css">
+    <script type="text/javascript" src="/admin/js/vendor/validator.js"></script>
+    <script type="text/javascript" src="/admin/js/vendor/jquery.tablesorter.js"></script>
 
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f9foeuegk6si50qwaywq64yw22vhjdyttykg62u831voqdoc"></script>
-    <script>
-        tinymce.init({
-            selector: '.tinyMce',
-            plugins: 'code image imagetools',
-            //menubar: "insert",
-            //toolbar: "image, code",
-            image_list: [
-              {title: 'My image 1', value: '/uploads/test_colors/Desert.jpg'},
-              {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
-            ],
-            image_advtab: true
-        });
-    </script>
-
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/admin/js/main.js"></script>
 </head>
 <body class="">
-    <div class="alert alert-addSite">
-        Add site was <strong></strong>!
-    </div>
-    <div class="alert alert-removeSite">
-        Removing site was <strong></strong>!
-    </div>
-    <div class="alert alert-editSite">
-        Editing site was <strong></strong>!
-    </div>
-    <div class="row">
-        <div class="container">
+    {% block alerts %}
+        <div class="alert alert-addSite">
+            Add site was <strong></strong>!
+        </div>
+        <div class="alert alert-removeSite">
+            Removing site was <strong></strong>!
+        </div>
+        <div class="alert alert-editSite">
+            Editing site was <strong></strong>!
+        </div>
+    {% endblock %}
+    <div class="container">
+        <div class="row">
             <nav class="navbar navbar-default">
               <div class="container-fluid">
                 <div class="navbar-header">
@@ -57,19 +45,27 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
+                        <li role="presentation"><a href="/admin/templates">Templates</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li class=""><a href="/admin/pages/all_pages">Show all<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="/admin/pages/add_new_page">Add new page<span class="sr-only">(current)</span></a></li>
+                          </ul>
+                        </li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites<span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
-                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new site<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="/admin/sites/index">Show all<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="/admin/sites/add_new">Add new site<span class="sr-only">(current)</span></a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
-                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Groups<span class="sr-only">(current)</span></a></li>
-                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new user<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="?page=sites">Groups<span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="?page=add_new">Add new user<span class="sr-only">(current)</span></a></li>
                           </ul>
                         </li>
                     </ul>
@@ -83,11 +79,13 @@
               </div>
             </nav>
         </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            {% block content %}{% endblock %}
+        <div class="row">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
+
+    {% block pageScript %}{% endblock %}
 </body>
 </html>

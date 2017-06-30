@@ -34,6 +34,7 @@ var path = {
         },
         admin: {
             js: 'admin/js/main.js',
+            jsPages: 'admin/js/pages/*/*.js',
             less: 'admin/css/*.less',
             blocks: 'admin/css/blocks/*/*.less',
             pages: 'admin/css/pages/*/*.less',
@@ -92,15 +93,16 @@ gulp.task('scripts', function () {
 
 gulp.task('scripts-admin', function () {
     return gulp.src([
-        path.dev.admin.js
+        path.dev.admin.js,
+        path.dev.admin.jsPages
     ])
-    .pipe(concat('__main.js'))
-    .pipe(gulp.dest(path.build.admin.scripts))
+    //.pipe(concat('__main.js'))
+    .pipe(gulp.dest(path.build.admin.js))
     .pipe(uglify().on('error', function(e){
         console.log(e);
     }))
-    .pipe(rename('_main.js'))
-    .pipe(gulp.dest(path.build.admin.scripts))
+    //.pipe(rename('_main.js'))
+    .pipe(gulp.dest(path.build.admin.js))
 });
 
 gulp.task('build', ['scripts', 'styles'], function () {});
