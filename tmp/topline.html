@@ -16,7 +16,16 @@
             <i class="header__icon header__icon_up"></i>
         </div>
         <div class="header__item header__item_login">
-            <a href="#">Login</a>
+                {% if data.login and data.login | length > 0 %}
+                <a href="/auth/logout">
+                    <img src="{{ data.login.avatar }}" class="header__avatar">
+                    {{ data.login.name }}
+                </a>
+                {% else %}
+                    <a href="/auth">Login</a>
+                {% endif %}
+            </a>
         </div>
     </div>
 </header>
+{# <div> <pre>{{ dump(data.login) }}</pre></div> #}

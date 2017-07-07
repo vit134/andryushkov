@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
-    $user = 'admin';
-    $password = '134vit134';
+    $user = 'root';
+    $password = '';
     $bdName = 'www_test';
 
 

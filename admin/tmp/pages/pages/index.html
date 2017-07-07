@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>All pages</h2>
+        </div>
+        <div class="col-lg-6">
+            <a class="btn btn-primary" href="pages/add_new_page" role="button">Add new</a>
+        </div>
+    </div>
+    {# <pre>{{ dump(data.pages) }}</pre> #}
+    <div class="row">
+        <table class="table table-bordered table_all-sites tablesorter">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Template</th>
+                    <th>In menu</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for page in data.pages %}
+                    <tr>
+                        <td>{{ page.id }}</td>
+                        <td>{{ page.name }}</td>
+                        <td>{{ page.alias }}</td>
+                        <td>{{ page.template }}</td>
+                        <td class="text-center">
+                            {% if page.available_in_menu == 1 %}
+                                yes
+                            {% else %}
+                                no
+                            {% endif %}
+                        </td>
+                        <td class="table_all-sites__td_icons">
+                            <a href="/admin/{{ data.route[0] }}/edit/{{ page.id }}" data-site-id="{{ page.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="" data-site-id="{{ page.id }}" class="table-icon remove-page-button"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            <tbody>
+        </table>
+    </div>
+{% endblock %}

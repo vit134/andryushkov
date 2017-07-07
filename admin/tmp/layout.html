@@ -30,6 +30,25 @@
             Editing site was <strong></strong>!
         </div>
     {% endblock %}
+    {% if is_tree  %}
+        <div class="tree">
+            <div class="tree__header">Tree</div>
+            <div class="tree__body">
+                <div class="tree__ul">
+                    {% for key,  item in data.tree %}
+                        <div class="tree__item">
+                            <a href="/admin/{{ key|lower }}" class="{% if key == data.route[0] %}active{% endif %}">{{ key|capitalize }}</a>
+                            <div class="tree__subul">
+                                {% for subitem in item %}
+                                    <div class="tree__subitem"><a href="/admin/{{ key|lower }}/edit/{{ subitem.id }}">{{ subitem.name }}</a></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-default">
@@ -46,13 +65,14 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li role="presentation"><a href="/admin/templates">Templates</a></li>
-                        <li class="dropdown">
+                        <li role="presentation"><a href="/admin/pages/">Pages</a></li>
+                        <!-- <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
                           <ul class="dropdown-menu">
                             <li class=""><a href="/admin/pages/all_pages">Show all<span class="sr-only">(current)</span></a></li>
                             <li class=""><a href="/admin/pages/add_new_page">Add new page<span class="sr-only">(current)</span></a></li>
                           </ul>
-                        </li>
+                        </li> -->
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites<span class="caret"></span></a>
                           <ul class="dropdown-menu">
@@ -81,6 +101,7 @@
         </div>
         <div class="row">
             <div class="container">
+                {# <pre>{{ dump(data.route) }}</pre> #}
                 {% block content %}{% endblock %}
             </div>
         </div>

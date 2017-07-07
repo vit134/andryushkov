@@ -18,6 +18,8 @@
         </div>
     </div>
     <div class="row">
+    {# <pre>{{ dump(data.route) }}</pre> #}
+    {# <pre>{{ dump(data.tree) }}</pre> #}
         <table class="table table-bordered table_all-sites tablesorter">
             <thead>
                 <tr>
@@ -34,7 +36,7 @@
                         <td>{{ template.name }}</td>
                         <td>{{ template.alias }}</td>
                         <td class="table_all-sites__td_icons">
-                            <a href="/admin/templates/edit_template/{{ template.id }}" data-site-id="{{ template.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="/admin/{{ data.route[0] }}/edit/{{ template.id }}" data-site-id="{{ template.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
                             <!-- <a href="" data-site-id="{{ template.id }}" class="table-icon"><span class="glyphicon glyphicon-eye-open"></span></a> -->
                             <a href="" data-site-id="{{ template.id }}" class="table-icon remove-button"><span class="glyphicon glyphicon-trash"></span></a>
                         </td>

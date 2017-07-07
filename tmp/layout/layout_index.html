@@ -9,7 +9,7 @@
         {% include 'blocks/main-block/main.html' with {item: data.main_site } %}
 
         {% block content %}
-            {#<pre>{{ dump(data) }}</pre>#}
+            <pre>{{ dump(data.route) }}</pre>
             <div class="content">
                 <div class="content__wrapper">
                     <div class="content__head">

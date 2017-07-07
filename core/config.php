@@ -6,6 +6,14 @@
         return array_splice(explode('/', $url), 1);
     }
 
+     function route() {
+        $url = $_SERVER['REQUEST_URI'];
+        //echo $url;
+        $url = str_replace('/admin/', "", $url);
+
+        return array_splice(explode('/', $url), 0);
+    }
+
     function getMysqlFieldType($type) {
         $mysql_data_type = array(
             'tinyint' => 1,
@@ -62,6 +70,22 @@
         return $indexData['templates'];
     }
 
+    function getPages() {
+        global $mysqli, $indexData;
+
+        $siteTypesQuery = "SELECT * FROM `pages`";
+        $siteTypesResult = $mysqli->query($siteTypesQuery);
+
+        $tmpQuery = "SELECT `id`, `name` FROM `templates`";
+        $tmpResult = $mysqli->query($tmpQuery);
+
+        foreach ($siteTypesResult as $key => $row) {
+            $indexData['pages'][$key] = $row;
+        }
+
+        return $indexData['pages'];
+    }
+
     function getSiteTags() {
         global $mysqli, $indexData;
 
@@ -110,4 +134,5 @@
 
         return $indexData['sites'];
     }
+
 ?>

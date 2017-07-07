@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3fea508-559b-44cc-aebe-050450c5188b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/1/add-edit-site.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/core/add_page.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/admin/tmp/pages/pages/all_pages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/popover.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/remodal-default-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/remodal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/scroll.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/select.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/slick.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProBold/GothamProBold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProBold/GothamProBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProBold/GothamProBold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProMedium/GothamProMedium.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProMedium/GothamProMedium.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProMedium/GothamProMedium.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProRegular/GothamProRegular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProRegular/GothamProRegular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/GothamProRegular/GothamProRegular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoBold/RobotoBold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoBold/RobotoBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoBold/RobotoBold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoRegular/RobotoRegular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoRegular/RobotoRegular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/fonts/RobotoRegular/RobotoRegular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/bg-mobile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/default-photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/guys/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-add.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-arrow-2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-arrow.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-close.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-plus.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-quote.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/icon-remove.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/img/logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/mask.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/popover.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/remodal.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/scroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/select.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/js/slider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/assets/less/style.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/error.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/finish.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/pass-2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/pass-3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/pass.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/reg-2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/reg-3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs/reg.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/popover.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/remodal-default-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/remodal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/scroll.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/select.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/slick.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProBold/GothamProBold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProBold/GothamProBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProBold/GothamProBold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProMedium/GothamProMedium.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProMedium/GothamProMedium.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProMedium/GothamProMedium.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProRegular/GothamProRegular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProRegular/GothamProRegular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/GothamProRegular/GothamProRegular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoBold/RobotoBold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoBold/RobotoBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoBold/RobotoBold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoRegular/RobotoRegular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoRegular/RobotoRegular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/fonts/RobotoRegular/RobotoRegular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/bg-mobile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/default-photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/guys/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-add.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-arrow-2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-arrow.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-close.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-plus.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-quote.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/icon-remove.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/img/logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/mask.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/popover.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/remodal.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/scroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/select.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/js/slider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/assets/less/style.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/error.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/finish.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/pass-2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/pass-3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/pass.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/reg-2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/reg-3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gustavs1/reg.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/tmp/layout.html" afterPath="$PROJECT_DIR$/admin/tmp/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/tmp/pages/pages/add_new_page.html" afterPath="$PROJECT_DIR$/admin/tmp/pages/pages/add_new_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/tmp/pages/sites/edit_site.html" afterPath="$PROJECT_DIR$/admin/tmp/pages/sites/edit_site.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/config.php" afterPath="$PROJECT_DIR$/core/config.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3fea508-559b-44cc-aebe-050450c5188b" name="Default" comment="" />
+      <created>1499339989234</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1499339989234</updated>
+      <workItem from="1499339990653" duration="88000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="88000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>

@@ -7,9 +7,10 @@
     {% include 'topline.html' %}
 
     {% block content %}
+
         <div class="all-site__wrapper">
             {% include 'blocks/filters/main.html' %}
-            <!-- <pre>{{ dump(data) }}</pre> -->
+             <pre>{{ dump(data.route) }}</pre>
         </div>
     {% endblock %}
 
