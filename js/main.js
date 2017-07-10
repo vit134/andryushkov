@@ -13,6 +13,7 @@ $(document).ready(function() {
     function init() {
         bindEvents();
         createCircle();
+
     }
 
     function bindEvents() {
@@ -100,6 +101,9 @@ $(document).ready(function() {
             }
         })
     }
+
+
+
 
 
 

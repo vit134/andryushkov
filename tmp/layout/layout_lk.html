@@ -1,0 +1,155 @@
+{% extends 'layout/_base.html' %}
+
+{% block content %}
+    <div class="lk">
+        <div class="lk__section">
+            <div class="lk__section__title">Personal info</div>
+            <div class="lk__col-left">
+                <div class="lk__img">
+                    <img src="{{ data.login.avatar }}" class="lk__img__image">
+                </div>
+                <div class="lk__edit">Edit</div>
+            </div>
+            <div class="lk__col-main">
+                <div class="lk__col-main__inner">
+                    <div class="lk__col-center">
+                        <div class="lk__col-center__inner">
+                            <div class="lk__row">
+                                <div class="lk-name">{{ data.login.name }}</div>
+                            </div>
+                            <div class="lk__row">
+                                <div class="lk-birthday">{{ data.login.birthday }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lk__col-right">
+                        <div class="lk__soc">
+                            <div class="lk__soc__link">
+                                <a href="{{ data.login.socialPage }}" target="_blank">{{ data.login.socialPage }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lk__section">
+            <div class="lk__section__title">Liked sites</div>
+            <div class="lk__table">
+                <div class="lk__table__row">
+                    <div class="lk__table__td lk__table__td_img">
+                        <img src="http://placekitten.com/90/50">
+                    </div>
+                    <div class="lk__table__td  lk__table__td_name">Geneva 2017</div>
+                    <div class="lk__table__td  lk__table__td_raiting">
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="8.3" data-size="35" data-line="3" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="4.4" data-size="35" data-line="3" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="2.9" data-size="35" data-line="3" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="10" data-size="35" data-line="3" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lk__table__row">
+                    <div class="lk__table__td lk__table__td_img">
+                        <img src="http://placekitten.com/90/50">
+                    </div>
+                    <div class="lk__table__td  lk__table__td_name">Geneva 2017</div>
+                    <div class="lk__table__td  lk__table__td_raiting">
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="8.3" data-size="35" data-line="3" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="4.4" data-size="35" data-line="3" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="2.9" data-size="35" data-line="3" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="10" data-size="35" data-line="3" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lk__table__row">
+                    <div class="lk__table__td lk__table__td_img">
+                        <img src="http://placekitten.com/90/50">
+                    </div>
+                    <div class="lk__table__td  lk__table__td_name">Geneva 2017</div>
+                    <div class="lk__table__td  lk__table__td_raiting">
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="8.3" data-size="35" data-line="3" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="4.4" data-size="35" data-line="3" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="2.9" data-size="35" data-line="3" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="10" data-size="35" data-line="3" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lk__table__row">
+                    <div class="lk__table__td lk__table__td_img">
+                        <img src="http://placekitten.com/90/50">
+                    </div>
+                    <div class="lk__table__td  lk__table__td_name">Geneva 2017</div>
+                    <div class="lk__table__td  lk__table__td_raiting">
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="8.3" data-size="35" data-line="3" data-colorOut="rgba(220,55,184, 0.3)" data-colorLine="rgba(220,55,184, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="4.4" data-size="35" data-line="3" data-colorOut="rgba(237,0,47, 0.3)" data-colorLine="rgba(237,0,47, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="2.9" data-size="35" data-line="3" data-colorOut="rgba(72,221,0, 0.3)" data-colorLine="rgba(72,221,0, 1)"></div>
+                            </div>
+                        </div>
+                        <div class="lk__raiting__item">
+                            <div class="lk__raiting__circle js-circle-progress">
+                                <div class="chart graph" data-percent="10" data-size="35" data-line="3" data-colorOut="rgba(186,243,0, 0.3)" data-colorLine="rgba(186,243,0, 1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# <a href="/auth/logout">Exit</a>
+        <pre>{{ dump(data.login) }}</pre> #}
+    </div>
+{% endblock %}

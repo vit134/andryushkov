@@ -23,8 +23,8 @@
             'redirect_uri'  => 'http://andryushkov/?provider=vk'
         ),
         'google' => array(
-            'client_id'     => '333193735318.apps.googleusercontent.com',
-            'client_secret' => 'lZB3aW8gDjIEUG8I6WVcidt5',
+            'client_id'     => '607818319032-v05se1lvpcb1vdm1mi7gf6kn9t1tcvsr.apps.googleusercontent.com',
+            'client_secret' => 'Vd_bSUAfIXAjEGcQfcjAQn5u',
             'redirect_uri'  => 'http://localhost/auth?provider=google'
         ),
         'facebook' => array(
@@ -152,6 +152,9 @@
         }
 
         echo $twig->render('layout/layout_auth.html', array('data' => $data));
+    } else if ($route[0] == 'lk') {
+
+        echo $twig->render('layout/layout_lk.html', array('data' => $data));
     }
 
 

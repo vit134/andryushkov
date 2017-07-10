@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+{% include 'main-menu.html' %}
+
+
+<div class="l-window js-l-window">
+    {% block topline %}
+        {% include 'topline.html' %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+</div>
+<div class="l-popup js-popup-container">
+    <div class="fake"></div>
+    {% block popup %}{% endblock %}
+</div>

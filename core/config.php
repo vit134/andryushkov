@@ -9,6 +9,14 @@
      function route() {
         $url = $_SERVER['REQUEST_URI'];
         //echo $url;
+        /*$arr array();
+
+        if (stristr($url, '?') != '') {
+            parse_str($url, $arr['params']);
+            $url = explode("?", $url);
+
+            $url = str_replace('/admin/', "", $url[0]);
+        }*/
         $url = str_replace('/admin/', "", $url);
 
         return array_splice(explode('/', $url), 0);

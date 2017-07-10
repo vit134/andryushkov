@@ -27,6 +27,7 @@ var path = {
         site: {
             js: 'js/main.js',
             jsPages: 'js/pages/*/*.js',
+            widgets: 'js/widgets/*.js',
             less: 'css/*.less',
             blocks: 'css/blocks/*/*.less',
             pages: 'css/pages/*/*.less',
@@ -80,7 +81,8 @@ gulp.task('styles-admin', function () {
 gulp.task('scripts', function () {
     return gulp.src([
         path.dev.site.js,
-        path.dev.site.jsPages
+        path.dev.site.jsPages,
+        path.dev.site.widgets
     ])
     //.pipe(concat('__main.js'))
     .pipe(gulp.dest(path.build.site.js))

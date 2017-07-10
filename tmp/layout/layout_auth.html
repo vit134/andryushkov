@@ -1,7 +1,8 @@
-{% block header %}
-    {% include 'header.html' %}
-{% endblock %}
+{% extends 'layout/_base.html' %}
 
+{% block topline %}{% endblock %}
+
+{% block content %}
 <div class="auth">
     <div class="auth__window">
         <a href="/" class="auth__cansel"></a>
@@ -10,7 +11,9 @@
         <div class="auth__buttons">
             <a href="{{ data.auth_href.vk }}" class="auth__button auth__button_vk">Vkontakte</a>
             <a href="{{ data.auth_href.facebook }}" class="auth__button auth__button_fb">Facebook</a>
-            <a href="" class="auth__button auth__button_g-plus">Google +</a>
+            <a href="{{ data.auth_href.google }}" class="auth__button auth__button_g-plus">Google +</a>
         </div>
     </div>
 </div>
+
+{% endblock %}

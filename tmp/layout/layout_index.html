@@ -1,35 +1,42 @@
-{% block header %}
-    {% include 'header.html' %}
-    {% include 'main-menu.html' %}
+{% extends 'layout/_base.html' %}
 
-{% endblock %}
+{% block content %}
 
-    <div class="l-window js-l-window">
-        {% include 'topline.html' %}
-        {% include 'blocks/main-block/main.html' with {item: data.main_site } %}
-
-        {% block content %}
-            <pre>{{ dump(data.route) }}</pre>
-            <div class="content">
-                <div class="content__wrapper">
-                    <div class="content__head">
-                        <div class="content__head__col">
-                            <span class="content__head__sort__name"><a href="/all-site">Last sites</a></span>
-                        </div>
-                        <div class="content__head__col"></div>
-                    </div>
-                    <div class="content__grid">
-                        <div class="content__body">
-                            {% for item in data.all_sites %}
-                                {% if loop.index < 5 %}
-                                    <div class="content__col">
-                                        {% include 'blocks/items/item-medium/main.html' with { item: item } %}
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
+    {% include 'blocks/main-block/main.html' with {item: data.main_site, user: data.login } %}
+    <div class="content">
+        <div class="content__wrapper">
+            <div class="content__head">
+                <div class="content__head__col">
+                    <span class="content__head__sort__name"><a href="/all-site">Last sites</a></span>
+                </div>
+                <div class="content__head__col"></div>
+            </div>
+            <div class="content__grid">
+                <div class="content__body">
+                    {% for item in data.all_sites %}
+                        {% if loop.index < 5 %}
+                            <div class="content__col">
+                                {% include 'blocks/items/item-medium/main.html' with { item: item } %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-        {% endblock %}
+        </div>
     </div>
+{% endblock %}
+
+{% block popup %}
+    <div class="popup js-popup" id="add-opinion">
+        <div class="popup__title">Add opinion</div>
+        <div class="popup__body">
+            <div class="popup__text">
+                Hi, you can just like this site ...
+            </div>
+            <div class="popup__like"></div>
+            <div class="popup__text">
+                but I'll be very gifted for a more detailed review.
+            </div>
+        </div>
+    </div>
+{% endblock %}

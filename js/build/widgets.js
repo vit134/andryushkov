@@ -1,0 +1,1 @@
+$(document).ready(function(){console.log("widgets"),function(){var o=$(".js-popup-container"),t=$(".js-popup");$(".js-popup-open").on("click",function(n){console.log(123),n.preventDefault();var a=$(this),e=a.attr("data-target");t.each(function(){$(this).attr("id")==e&&(o.addClass("open"),$(this).addClass("open"))})})}()});

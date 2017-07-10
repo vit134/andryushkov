@@ -52,14 +52,27 @@ class Facebook extends AbstractAdapter
                 'code'          => $_GET['code']
             );
 
-            parse_str($this->get('https://graph.facebook.com/oauth/access_token', $params, false), $tokenInfo);
+
+
+           //parse_str($this->get('https://graph.facebook.com/oauth/access_token', $params, false), $tokenInfo);
+
+            //echo $this->get('https://graph.facebook.com/oauth/access_token', $params, false);
+
+            $tokenInfo = json_decode($this->get('https://graph.facebook.com/oauth/access_token', $params, false), true);
+
+            if (isset($tokenInfo['error'])) {
+
+            }
 
             if (count($tokenInfo) > 0 && isset($tokenInfo['access_token'])) {
                 $params = array('access_token' => $tokenInfo['access_token']);
+
                 $userInfo = $this->get('https://graph.facebook.com/me', $params);
 
                 if (isset($userInfo['id'])) {
+
                     $this->userInfo = $userInfo;
+
                     $result = true;
                 }
             }
