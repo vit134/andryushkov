@@ -14,6 +14,10 @@ $(document).ready(function() {
         bindEvents();
         createCircle();
 
+
+        if ($('.js-raiting-item') && $('.js-raiting-item').length > 0) {
+            roundSlider();
+        }
     }
 
     function bindEvents() {
@@ -102,7 +106,19 @@ $(document).ready(function() {
         })
     }
 
-
+    function roundSlider() {
+        $('.js-raiting-item').roundSlider({
+            min: 0,
+            max: 10,
+            step: 0.1,
+            radius: 40,
+            width: 5,
+            handleSize: "+5",
+            handleShape: "dot",
+            sliderType: "min-range",
+            value: 5
+        });
+    }
 
 
 

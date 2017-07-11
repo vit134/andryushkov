@@ -1313,6 +1313,7 @@ a {
 }
 .popup {
   display: none;
+  position: relative;
   vertical-align: middle;
   box-sizing: border-box;
   max-width: 500px;
@@ -1342,6 +1343,181 @@ a {
   margin: 20px auto;
   background: url('../blocks/popup/images/like.svg') center no-repeat;
   background-size: 100%;
+  cursor: pointer;
+}
+.popup__raiting {
+  margin: 25px 0;
+}
+.popup__raiting__item {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+.popup__raiting__item_design .rs-range-color {
+  background-color: #dc37b8;
+}
+.popup__raiting__item_design .rs-path-color {
+  background-color: #fff;
+}
+.popup__raiting__item_design .rs-handle {
+  display: block;
+  background-color: #fff;
+  padding: 7px;
+  border: 2px solid #dc37b8;
+  height: 6px !important;
+  width: 6px !important;
+  margin: -3px 0px 0px -3px !important;
+}
+.popup__raiting__item_design .rs-handle.rs-focus {
+  border-color: #dc37b8;
+}
+.popup__raiting__item_design .rs-handle:after {
+  border-color: #dc37b8;
+  background-color: #dc37b8;
+}
+.popup__raiting__item_usability .rs-range-color {
+  background-color: #ed002f;
+}
+.popup__raiting__item_usability .rs-path-color {
+  background-color: #fff;
+}
+.popup__raiting__item_usability .rs-handle {
+  display: block;
+  background-color: #fff;
+  padding: 7px;
+  border: 2px solid #ed002f;
+  height: 6px !important;
+  width: 6px !important;
+  margin: -3px 0px 0px -3px !important;
+}
+.popup__raiting__item_usability .rs-handle.rs-focus {
+  border-color: #ed002f;
+}
+.popup__raiting__item_usability .rs-handle:after {
+  border-color: #ed002f;
+  background-color: #ed002f;
+}
+.popup__raiting__item_creativity .rs-range-color {
+  background-color: #48dd00;
+}
+.popup__raiting__item_creativity .rs-path-color {
+  background-color: #fff;
+}
+.popup__raiting__item_creativity .rs-handle {
+  display: block;
+  background-color: #fff;
+  padding: 7px;
+  border: 2px solid #48dd00;
+  height: 6px !important;
+  width: 6px !important;
+  margin: -3px 0px 0px -3px !important;
+}
+.popup__raiting__item_creativity .rs-handle.rs-focus {
+  border-color: #48dd00;
+}
+.popup__raiting__item_creativity .rs-handle:after {
+  border-color: #48dd00;
+  background-color: #48dd00;
+}
+.popup__raiting__item_speed .rs-range-color {
+  background-color: #baf300;
+}
+.popup__raiting__item_speed .rs-path-color {
+  background-color: #fff;
+}
+.popup__raiting__item_speed .rs-handle {
+  display: block;
+  background-color: #fff;
+  padding: 7px;
+  border: 2px solid #baf300;
+  height: 6px !important;
+  width: 6px !important;
+  margin: -3px 0px 0px -3px !important;
+}
+.popup__raiting__item_speed .rs-handle.rs-focus {
+  border-color: #baf300;
+}
+.popup__raiting__item_speed .rs-handle:after {
+  border-color: #baf300;
+  background-color: #baf300;
+}
+.popup__raiting__title {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.popup__raiting .rs-border {
+  border-color: #fff;
+}
+.popup__raiting .rs-handle-dot:after {
+  display: none;
+}
+.popup__raiting .rs-bg-color {
+  background-color: #F4F7F6;
+}
+.popup__raiting .rs-handle.rs-move {
+  cursor: pointer;
+}
+.popup__raiting .rs-border {
+  border-color: transparent;
+}
+.popup__raiting .rs-tooltip.hover,
+.popup__raiting .rs-tooltip.edit:hover {
+  border: none;
+}
+.popup__raiting .rs-tooltip-text {
+  font-weight: 600;
+}
+.popup__raiting .rs-tooltip {
+  top: 50%;
+  margin-top: -14px !important;
+  left: 0 !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  z-index: 3 !important;
+}
+.popup__textarea {
+  width: 100%;
+  border-radius: 3px;
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  min-height: 100px;
+  border: 1px solid #eee;
+}
+.popup__textarea:active,
+.popup__textarea:focus {
+  outline: none;
+}
+.popup__submit {
+  width: 150px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  background: #eee;
+  border-radius: 3px;
+  margin: 20px auto 0;
+  text-align: center;
+  cursor: pointer;
+}
+.popup__close {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url('../blocks/popup/images/close.svg') center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  transition: All .8s ease;
+}
+.popup__close:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .switch-input {
   /* Rounded sliders */
