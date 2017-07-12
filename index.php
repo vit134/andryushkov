@@ -141,7 +141,10 @@
                 }
 
             }
+
         }
+
+        $data['site']['likes'] = getSiteLikes($data['site']['id']);
 
         echo $twig->render('layout/layout_site.html', array('data' => $data));
     } else if ($route[0] == 'all-site') {

@@ -14,29 +14,16 @@
                                 <a href="#">
                                     <img src="{% if like.avatar != '' %} {{ like.avatar }} {% else %} /images/no_ava.svg {% endif %}" class="main-block__like-user__img">
                                 </a>
+                                <div class="main-block__like-user__item__descr animated slideInUp">
+                                    <div class="main-block__like-user__item__descr__inner">
+                                        <img src="{% if like.avatar != '' %} {{ like.avatar }} {% else %} /images/no_ava.svg {% endif %}" class="main-block__like-user__item__descr__img">
+                                        <div class="main-block__like-user__item__descr__name">{{ like.name }}</div>
+                                        {% if  like.count_like != '' %}<div class="main-block__like-user__item__descr__like">{{ like.count_like }}</div>{% endif %}
+                                    </div>
+                                </div>
                             </li>
                         {% endif %}
                     {% endfor %}
-                    <!-- <li class="main-block__like-user__item">
-                        <a href="#">
-                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
-                        </a>
-                    </li>
-                    <li class="main-block__like-user__item">
-                        <a href="#">
-                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
-                        </a>
-                    </li>
-                    <li class="main-block__like-user__item">
-                        <a href="#">
-                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
-                        </a>
-                    </li>
-                    <li class="main-block__like-user__item">
-                        <a href="#">
-                            <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
-                        </a>
-                    </li> -->
                     {% if item.likes | length > 3 %}
                         <li class="main-block__like-user__item">
                             +<span class="main-block__like-user__count">{{ item.likes | length - 4 }}</span>

@@ -171,11 +171,13 @@
                 $userData = $res->fetch_assoc();
                 $name = $userData['name'];
                 $avatar = $userData['avatar'];
+                $countLike = getUserCountLikes($row['user_id']);
             }
 
             $result[] = array(
                 'name' => $name,
                 'avatar' => $avatar,
+                'count_like' => $countLike,
                 'opinion' => $row['opinion'],
                 'design_raiting' => $row['design_raiting'],
                 'usability_raiting' => $row['usability_raiting'],
@@ -187,6 +189,16 @@
         }
 
         return $result;
+    }
+
+    function getUserCountLikes($id) {
+        global $mysqli, $indexData;
+
+        $likeQuery = "SELECT `is_like` FROM `liked_sites` WHERE `user_id` = " . $id;
+        $result = $mysqli->query($likeQuery);
+
+        return $result->num_rows;
+
     }
 
 ?>

@@ -56,7 +56,13 @@ $(document).ready(function() {
                     e = JSON.parse(e);
 
                     if (e.status === 'success') {
-
+                        $('.js-popup.open').addClass('slideOutUp').animate({opacity: 0},1000);
+                        setTimeout(function() {
+                            container.removeClass('open');
+                        }, 200)
+                        setTimeout(function() {
+                            $('.js-popup.open').removeClass('slideOutUp').removeClass('open').css({'opacity': 1});
+                        },1500)
                     } else {
 
                     }

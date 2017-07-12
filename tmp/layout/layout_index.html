@@ -29,7 +29,7 @@
 {% endblock %}
 
 {% block popup %}
-    <form class="popup js-popup" id="add-opinion">
+    <form class="popup js-popup animated slideInUp" id="add-opinion">
         <input type="hidden" name="site_id" value="{{ data.main_site.id }}">
         <input type="hidden" name="user_id" value="{{ data.login.socialId }}">
         <div class="popup__title">Add opinion</div>
@@ -39,7 +39,7 @@
             </div>
             <div class="popup__like">
                 <input class="popup__like__input" type="checkbox" name="like" id="like">
-                <label class="popup__like__label" for="like"></label>
+                <label class="popup__like__label animated infinite" for="like"></label>
             </div>
             <div class="popup__text">
                 but I'll be very gifted for a more detailed review.
