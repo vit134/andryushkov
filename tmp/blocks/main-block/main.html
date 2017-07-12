@@ -8,7 +8,16 @@
             <div class="main-block__col main-block__col_left"><span class="main-block__date">Site of the day /</span><span class="main-block__date__val"> {{ "now"|date("d M, Y") }}</span></div>
             <div class="main-block__col main-block__col_right">
                 <ul class="main-block__like-user">
-                    <li class="main-block__like-user__item">
+                    {% for like in item.likes %}
+                        {% if loop.index < 5 %}
+                            <li class="main-block__like-user__item">
+                                <a href="#">
+                                    <img src="{% if like.avatar != '' %} {{ like.avatar }} {% else %} /images/no_ava.svg {% endif %}" class="main-block__like-user__img">
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    <!-- <li class="main-block__like-user__item">
                         <a href="#">
                             <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
                         </a>
@@ -27,10 +36,12 @@
                         <a href="#">
                             <img src="https://assets.awwwards.com/awards/media/cache/thumb_user_70/avatar/77940/542e04568822e.jpeg" class="main-block__like-user__img">
                         </a>
-                    </li>
-                    <li class="main-block__like-user__item">
-                        +<span class="main-block__like-user__count">21</span>
-                    </li>
+                    </li> -->
+                    {% if item.likes | length > 3 %}
+                        <li class="main-block__like-user__item">
+                            +<span class="main-block__like-user__count">{{ item.likes | length - 4 }}</span>
+                        </li>
+                    {% endif %}
                     <li class="main-block__like-user__item js-like-site js-popup-open" data-siteID="{{ item.id }}" data-userId="{{ user.socialId }}" data-target="add-opinion">
                         <span class="main-block__like-user__add">+</span>
                     </li>

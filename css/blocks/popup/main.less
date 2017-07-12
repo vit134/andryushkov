@@ -28,12 +28,26 @@
     }
 
     &__like {
-        width: 100px;
-        height: 100px;
-        margin: 20px auto;
-        background: url('../blocks/popup/images/like.svg') center no-repeat;
-        background-size: 100%;
-        cursor: pointer;
+
+        &__label {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: url('../blocks/popup/images/like.svg') center no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+        }
+
+        &__input {
+            position: absolute;
+            visibility: hidden;
+            left: -1000px;
+        }
+
+        &__input:checked + &__label {
+            background: red;
+        }
     }
 
     &__raiting {
@@ -124,7 +138,7 @@
                     background-color: rgba(186,243,0, 1);
                 }
                 .rs-path-color  {
-                    background-color: #fff;
+                    background-color: #eee;
                 }
                 .rs-handle  {
                     display: block;

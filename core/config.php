@@ -49,7 +49,18 @@
         $query = 'SELECT * FROM `sites` ORDER BY `date_create` DESC LIMIT 1';
         $result = $mysqli->query($query);
 
-        return $result->fetch_array(MYSQLI_ASSOC);
+        $res = array();
+
+        foreach ($result->fetch_array(MYSQLI_ASSOC) as $key => $value) {
+            $res[$key] = $value;
+
+        }
+
+        $res['likes'] = getSiteLikes($res['id']);
+
+
+        //return $result->fetch_array(MYSQLI_ASSOC);
+        return $res;
     }
 
     function getSiteTypes() {
@@ -136,11 +147,46 @@
                 } else {
                     $indexData['sites'][$key][$keyRow] = $valueRow;
                 }
-
+                $indexData['sites'][$key]['likes'] = getSiteLikes($row['id']);
             }
         }
 
         return $indexData['sites'];
+    }
+
+    function getSiteLikes($id) {
+        global $mysqli, $indexData;
+        $result = array();
+
+        $likeQuery = "SELECT * FROM `liked_sites` WHERE `site_id` = " . $id . " ORDER BY `date_create` DESC";
+
+        foreach ($mysqli->query($likeQuery) as $key => $row) {
+            //var_dump($row);
+            $avatar = '';
+            $name = 'no name';
+
+            if ($row['user_id'] != '') {
+                $userNameQuery = "SELECT `name`, `avatar` FROM `auth` WHERE `social_id`=" . $row['user_id'];
+                $res = $mysqli->query($userNameQuery);
+                $userData = $res->fetch_assoc();
+                $name = $userData['name'];
+                $avatar = $userData['avatar'];
+            }
+
+            $result[] = array(
+                'name' => $name,
+                'avatar' => $avatar,
+                'opinion' => $row['opinion'],
+                'design_raiting' => $row['design_raiting'],
+                'usability_raiting' => $row['usability_raiting'],
+                'creativity_raiting' => $row['creativity_raiting'],
+                'speed_raiting' => $row['speed_raiting'],
+                'is_like' => $row['is_like'] == 1 ? true : false
+            );
+
+        }
+
+        return $result;
     }
 
 ?>

@@ -123,6 +123,7 @@
 
 
     if ($route[0] == "") {
+        //var_dump(getSiteLikes(107));
         echo $twig->render('layout/layout_index.html', array('data' => $data));
     } else if ($route[0] == 'site'){
         $id = $route[1];

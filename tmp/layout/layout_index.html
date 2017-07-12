@@ -24,42 +24,49 @@
             </div>
         </div>
     </div>
+
+    <pre>{{ dump(data.all_sites) }}</pre>
 {% endblock %}
 
 {% block popup %}
-    <div class="popup js-popup" id="add-opinion">
+    <form class="popup js-popup" id="add-opinion">
+        <input type="hidden" name="site_id" value="{{ data.main_site.id }}">
+        <input type="hidden" name="user_id" value="{{ data.login.socialId }}">
         <div class="popup__title">Add opinion</div>
         <div class="popup__body">
             <div class="popup__text">
                 Hi, you can just like this site ...
             </div>
-            <div class="popup__like"></div>
+            <div class="popup__like">
+                <input class="popup__like__input" type="checkbox" name="like" id="like">
+                <label class="popup__like__label" for="like"></label>
+            </div>
             <div class="popup__text">
                 but I'll be very gifted for a more detailed review.
             </div>
             <div class="popup__raiting">
                 <div class="popup__raiting__item popup__raiting__item_design">
                     <div class="popup__raiting__title">Design</div>
-                    <div class="js-raiting-item"></div>
+                    <div class="js-raiting-item" data-name="design"></div>
                 </div>
                 <div class="popup__raiting__item popup__raiting__item_usability">
                     <div class="popup__raiting__title">Usability</div>
-                    <div class="js-raiting-item"></div>
+                    <div class="js-raiting-item" data-name="usability"></div>
                 </div>
                 <div class="popup__raiting__item popup__raiting__item_creativity">
-                    <div class="popup__raiting__title">Creativity</div>
-                    <div class="js-raiting-item"></div>
+                    <div class="popup__raiting__title">creativity</div>
+                    <div class="js-raiting-item" data-name="creativity"></div>
                 </div>
                 <div class="popup__raiting__item popup__raiting__item_speed">
                     <div class="popup__raiting__title">Speed</div>
-                    <div class="js-raiting-item"></div>
+                    <div class="js-raiting-item" data-name="speed"></div>
                 </div>
             </div>
             <div class="popup__opinion">
-                <textarea class="popup__textarea" placeholder="Write your review here"></textarea>
+                <textarea class="popup__textarea" placeholder="Write your review here" name="opinion"></textarea>
             </div>
         </div>
-        <div class="popup__submit">Send</div>
-        <div class="popup__close"></div>
-    </div>
+        <div class="popup__submit js-popup-submit">Send</div>
+        <div class="popup__close js-popup-close"></div>
+    </form>
 {% endblock %}
