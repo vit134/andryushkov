@@ -74,7 +74,8 @@
         border-bottom : 1px solid #eee;
     }
 
-    &__edit {
+    &__button {
+        display: block;
         width: 200px;
         padding: 10px 0;
         background-color: #eee;
@@ -84,10 +85,10 @@
         text-align: center;
         margin: 20px auto 0;
         cursor: pointer;
-        transition: All .3s ease;
+        transition: All .4s ease;
 
         &:hover {
-            background-color: inherit;
+            background-color: @buttonHoverColor;
         }
     }
 
@@ -95,15 +96,53 @@
 
         &__row {
             font-size: 0;
-            padding-bottom: 10px;
+            padding: 10px 0;
             border-bottom: 1px solid #eee;
-            margin-bottom: 10px;
+            position: relative;
 
             &:last-child {
-                margin-bottom: 0;
-                padding-bottom: 0;
+                /*margin-bottom: 0;
+                padding-bottom: 0;*/
                 border-bottom: none;
             }
+
+            &:hover {
+                background-color: #eee;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    width: 1000px;
+                    height: 100%;
+                    background-color: #eee;
+                }
+
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    width: 1000px;
+                    height: 100%;
+                    background-color: #eee;
+                }
+            }
+
+            &:hover & {
+
+            }
+        }
+
+        &__link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         &__td {
@@ -112,7 +151,11 @@
             vertical-align: middle;
 
             &_img {
-                width: 20%
+                width: 20%;
+
+                & img {
+                    max-width: 90px;
+                }
             }
 
             &_name {
@@ -122,9 +165,22 @@
             }
 
             &_raiting {
-                width: 40%;
+                width: 30%;
                 text-align: center;
             }
+
+            &_like {
+                width: 10%;
+                text-align: center;
+            }
+        }
+
+        &__like {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background: url(../blocks/lk/images/like.svg) center no-repeat;
+            background-size: 100%;
         }
     }
 

@@ -191,6 +191,22 @@
         return $result;
     }
 
+    function getUserLikes($userId) {
+        global $mysqli, $indexData;
+        $result = array();
+        //SELECT * FROM `liked_sites` INNER JOIN `sites` ON liked_sites.site_id = sites.id WHERE `user_id`=3710019
+
+        //$likeQuery = "SELECT * FROM `liked_sites` WHERE `user_id` = " . $userId . " ORDER BY `date_create` DESC";
+        $likeQuery = "select *, sites.name as name from  liked_sites left join sites on sites.id= liked_sites.site_id where user_id=" . $userId;
+
+        foreach ($mysqli->query($likeQuery) as $key => $row) {
+            $result[] = $row;
+        }
+
+
+        return $result;
+    }
+
     function getUserCountLikes($id) {
         global $mysqli, $indexData;
 
@@ -202,3 +218,4 @@
     }
 
 ?>
+

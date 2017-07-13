@@ -157,7 +157,9 @@
 
         echo $twig->render('layout/layout_auth.html', array('data' => $data));
     } else if ($route[0] == 'lk') {
+        //var_dump($data['login']->socialId);
 
+        $data['likes'] = getUserLikes($data['login']->socialId);
         echo $twig->render('layout/layout_lk.html', array('data' => $data));
     }
 

@@ -3946,7 +3946,8 @@ a {
   padding: 15px 0;
   border-bottom: 1px solid #eee;
 }
-.lk__edit {
+.lk__button {
+  display: block;
   width: 200px;
   padding: 10px 0;
   background-color: #eee;
@@ -3956,21 +3957,51 @@ a {
   text-align: center;
   margin: 20px auto 0;
   cursor: pointer;
-  transition: All .3s ease;
+  transition: All .4s ease;
 }
-.lk__edit:hover {
-  background-color: inherit;
+.lk__button:hover {
+  background-color: #c3c3c3;
 }
 .lk__table__row {
   font-size: 0;
-  padding-bottom: 10px;
+  padding: 10px 0;
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
+  position: relative;
 }
 .lk__table__row:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  /*margin-bottom: 0;
+                padding-bottom: 0;*/
   border-bottom: none;
+}
+.lk__table__row:hover {
+  background-color: #eee;
+}
+.lk__table__row:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 1000px;
+  height: 100%;
+  background-color: #eee;
+}
+.lk__table__row:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 1000px;
+  height: 100%;
+  background-color: #eee;
+}
+.lk__table__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .lk__table__td {
   font-size: 14px;
@@ -3980,14 +4011,28 @@ a {
 .lk__table__td_img {
   width: 20%;
 }
+.lk__table__td_img img {
+  max-width: 90px;
+}
 .lk__table__td_name {
   width: 40%;
   font-size: 16px;
   font-weight: 600;
 }
 .lk__table__td_raiting {
-  width: 40%;
+  width: 30%;
   text-align: center;
+}
+.lk__table__td_like {
+  width: 10%;
+  text-align: center;
+}
+.lk__table__like {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url(../blocks/lk/images/like.svg) center no-repeat;
+  background-size: 100%;
 }
 .lk__raiting__item {
   display: inline-block;
