@@ -6,20 +6,41 @@
         return array_splice(explode('/', $url), 1);
     }
 
-     function route() {
+     /*function route() {
         $url = $_SERVER['REQUEST_URI'];
         //echo $url;
-        /*$arr array();
+        $arr array();
 
         if (stristr($url, '?') != '') {
             parse_str($url, $arr['params']);
             $url = explode("?", $url);
 
             $url = str_replace('/admin/', "", $url[0]);
-        }*/
+        }
         $url = str_replace('/admin/', "", $url);
 
         return array_splice(explode('/', $url), 0);
+    }*/
+
+    function route() {
+        $url = $_SERVER['REQUEST_URI'];
+        $result = array();
+
+        if (stristr($url, '?') != '') {
+            $url = explode('?', $url)[0];
+            //echo $url . '<br>';
+            $result = explode('/', $url);
+            //var_dump(array_splice($_GET, 1));
+            $result['params'] = array_splice($_GET, 1);
+        } else {
+            $result = explode('/', $url);
+        }
+
+        /*echo '<pre>';
+        var_dump(array_splice($result, 1));
+        echo '</pre>';*/
+
+        return array_splice($result, 1);
     }
 
     function getMysqlFieldType($type) {
@@ -197,7 +218,17 @@
         //SELECT * FROM `liked_sites` INNER JOIN `sites` ON liked_sites.site_id = sites.id WHERE `user_id`=3710019
 
         //$likeQuery = "SELECT * FROM `liked_sites` WHERE `user_id` = " . $userId . " ORDER BY `date_create` DESC";
-        $likeQuery = "select *, sites.name as name from  liked_sites left join sites on sites.id= liked_sites.site_id where user_id=" . $userId;
+        $likeQuery = "SELECT
+                        liked_sites.opinion AS opinion,
+                        liked_sites.design_raiting AS design_raiting,
+                        liked_sites.usability_raiting AS usability_raiting,
+                        liked_sites.creativity_raiting AS creativity_raiting,
+                        liked_sites.speed_raiting AS speed_raiting,
+                        liked_sites.is_like AS is_like,
+                        sites.name AS name,
+                        sites.alias AS alias,
+                        sites.small_img_file AS small_img_file
+                    FROM  liked_sites LEFT JOIN sites ON sites.id= liked_sites.site_id WHERE user_id=" . $userId;
 
         foreach ($mysqli->query($likeQuery) as $key => $row) {
             $result[] = $row;
@@ -218,4 +249,3 @@
     }
 
 ?>
-

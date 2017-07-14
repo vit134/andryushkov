@@ -3,14 +3,17 @@
     {% include 'main-menu.html' %}
 {% endblock %}
 
-<div class="l-window js-l-window">
+<div class="l-window js-l-window {{ data.route[0] }}">
     {% include 'topline.html' %}
 
     {% block content %}
-
         <div class="all-site__wrapper">
-            {% include 'blocks/filters/main.html' %}
-             <pre>{{ dump(data.route) }}</pre>
+            {# include 'blocks/filters/main.html' #}
+            {% for site in data.all_sites %}
+                <div class="content__col">
+                    {% include 'blocks/items/item-medium/main.html' with { item: site, user: data.login} %}
+                </div>
+            {% endfor %}
         </div>
     {% endblock %}
 

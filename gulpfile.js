@@ -46,7 +46,7 @@ var path = {
 
 gulp.task('styles', function () {
     return gulp.src([
-        path.dev.site.vendorCss,
+        //path.dev.site.vendorCss,
         path.dev.site.less,
         path.dev.site.blocks,
         path.dev.site.pages

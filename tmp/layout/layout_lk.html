@@ -6,7 +6,7 @@
             <div class="lk__section__title">Personal info</div>
             <div class="lk__col-left">
                 <div class="lk__img">
-                    <img src="{{ data.login.avatar }}" class="lk__img__image">
+                    <img src="{{ data.login.avatar is empty  ? '/images/no_ava.svg' : data.login.avatar  }}" class="lk__img__image">
                 </div>
                 <div class="lk__button lk__button_edit">Edit</div>
                 <a href="/auth/logout" class="lk__button lk__button_exit">Exit</a>
@@ -18,9 +18,11 @@
                             <div class="lk__row">
                                 <div class="lk-name">{{ data.login.name }}</div>
                             </div>
-                            <div class="lk__row">
-                                <div class="lk-birthday">{{ data.login.birthday }}</div>
-                            </div>
+                            {% if data.login.birthday %}
+                                <div class="lk__row">
+                                    <div class="lk-birthday">{{ data.login.birthday }}</div>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="lk__col-right">
@@ -33,6 +35,7 @@
                 </div>
             </div>
         </div>
+        {# <pre>{{ dump(data.likes) }}</pre> #}
         <div class="lk__section">
             <div class="lk__section__title">Liked sites</div>
             <div class="lk__table">
@@ -42,7 +45,7 @@
                         <div class="lk__table__td lk__table__td_img">
                             <img src="{{ like.small_img_file }}">
                         </div>
-                        <div class="lk__table__td  lk__table__td_name">{{ like.name }}</div>
+                        <div class="lk__table__td  lk__table__td_name">{{ like.name | capitalize }}</div>
                         <div class="lk__table__td  lk__table__td_raiting">
                             <div class="lk__raiting__item">
                                 <div class="lk__raiting__circle js-circle-progress">

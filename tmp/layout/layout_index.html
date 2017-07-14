@@ -7,7 +7,7 @@
         <div class="content__wrapper">
             <div class="content__head">
                 <div class="content__head__col">
-                    <span class="content__head__sort__name"><a href="/all-site">Last sites</a></span>
+                    <span class="content__head__sort__name"><a href="/all-site">All sites</a></span>
                 </div>
                 <div class="content__head__col"></div>
             </div>
@@ -16,7 +16,7 @@
                     {% for item in data.all_sites %}
                         {% if loop.index < 5 %}
                             <div class="content__col">
-                                {% include 'blocks/items/item-medium/main.html' with { item: item } %}
+                                {% include 'blocks/items/item-medium/main.html' with { item: item, user: data.login} %}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -30,8 +30,8 @@
 
 {% block popup %}
     <form class="popup js-popup animated slideInUp" id="add-opinion">
-        <input type="hidden" name="site_id" value="{{ data.main_site.id }}">
-        <input type="hidden" name="user_id" value="{{ data.login.socialId }}">
+        <input type="hidden" name="site_id" value="">
+        <input type="hidden" name="user_id" value="">
         <div class="popup__title">Add opinion</div>
         <div class="popup__body">
             <div class="popup__text">

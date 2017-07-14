@@ -31,12 +31,17 @@ $(document).ready(function() {
             $lWindow.removeClass('open')
         })
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll load', function() {
             if ($(window).scrollTop() > 500) {
                 $upButton.addClass('open')
             } else {
                 $upButton.removeClass('open')
             }
+        })
+
+        $upButton.on('click', function() {
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
         })
     }
 

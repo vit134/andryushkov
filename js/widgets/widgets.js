@@ -22,6 +22,8 @@ $(document).ready(function() {
                 var name = $(this).attr('id')
 
                 if (name === _target) {
+                    $(this).find('input[name=site_id]').val($this.attr('data-siteID'))
+                    $(this).find('input[name=user_id]').val($this.attr('data-userID'))
                     container.addClass('open');
                     $(this).addClass('open');
                 }

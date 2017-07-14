@@ -117,7 +117,7 @@
         getSite();
         getTemplates();
         getPages();
-        $indexData['route'] = $route = route();
+        $indexData['route'] = $route = array_splice(explode('/', $_SERVER['REQUEST_URI']), 2);
 
         $indexData['tree'] = array(
             'templates' => $indexData['templates'],
@@ -135,6 +135,7 @@
 
     init();
 
+    //var_dump($route);
 
     switch ($route[0]) {
          case 'templates':

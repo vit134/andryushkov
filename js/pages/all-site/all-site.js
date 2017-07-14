@@ -56,6 +56,35 @@ $(document).ready(function() {
             $(this).closest($filtersItem).find($filterInput).removeClass('active');
         }
     })
+
+
+    function animateBlocks() {
+        var item = $('.js-item-medium');
+
+        var _animationName = 'slideInUp';
+        //item.addClass('slideInRight');
+
+        var i = 0;
+
+        var timerId = setTimeout(function tick() {
+
+            if ( i < item.length) {
+                if (!item.eq(i).hasClass(_animationName)) {
+                    item.eq(i).addClass(_animationName).show();
+                    i++;
+                } else {
+                    return;
+                }
+            } else {
+                i = 0;
+                clearTimeout(timerId);
+            }
+            timerId = setTimeout(tick, 100);
+        }, 100);
+
+    }
+
+    animateBlocks();
 })
 
 

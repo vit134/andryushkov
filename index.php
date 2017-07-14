@@ -112,15 +112,17 @@
         'site_type' => getSiteTypes(),
         'site_author' => getUsers(),
         'pages' => getPages(),
-        'route' => route()[1],
+        'route' => route(),
         'auth_href' => $indexData['auth_href'],
-        'login' => $_SESSION['user']
+        'login' => $_SESSION['user'],
+        //'all_route' => route()
 
     );
 
-    $route = getUrl($_SERVER['REQUEST_URI']);
+    //$route = getUrl($_SERVER['REQUEST_URI']);
+    $route = route();
 
-
+    //echo $route[0];
 
     if ($route[0] == "") {
         //var_dump(getSiteLikes(107));

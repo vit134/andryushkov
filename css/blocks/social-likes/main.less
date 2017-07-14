@@ -1,0 +1,55 @@
+@buttonSize: 30px;
+
+.social-likes {
+    &__widget {
+        display: inline-block;
+        vertical-align: middle;
+        width: @buttonSize;
+        height: @buttonSize;
+        margin-right: 10px;
+        background: inherit;
+        cursor: pointer;
+        border: 1px solid #fff;
+        transition: All .2s ease;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &_facebook {
+            background-image: url('../blocks/social-likes/images/fb_icon_white.svg');
+            background-size: @buttonSize - 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: #3B5998;
+                border-color: #3B5998;
+            }
+        }
+
+        &_vkontakte {
+            background-image: url('../blocks/social-likes/images/vk_icon_white.svg');
+            background-size: @buttonSize - 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: #507299;
+                border-color: #507299;
+            }
+        }
+
+        &_plusone {
+            background-image: url('../blocks/social-likes/images/g-plus_icon_white.svg');
+            background-size: @buttonSize - 15px;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                background-color: #db4437;
+                border-color: #db4437;
+            }
+        }
+    }
+}

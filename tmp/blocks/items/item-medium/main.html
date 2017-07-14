@@ -1,9 +1,20 @@
 {#<pre>{{ dump(item.tags | length) }}</pre>#}
-<div class="item-medium">
+<div class="item-medium js-item-medium animated">
     <div class="item-medium__inner">
-        <a href="/site/{{ item.alias }}" class="item-medium">
+        <div class="item-medium__img__wrap">
             <img src="{{ item.small_img_file }}" class="item-medium__img">
-        </a>
+            <div class="item-medium__img__descr">
+                <a href="/site/{{ item.alias }}" class="item-medium__link">See case</a>
+                <div class="item-medium__like js-like-site js-popup-open" data-siteID="{{ item.id }}" data-userId="{{ user.socialId }}" data-target="add-opinion"></div>
+                <div class="item-medium__social-likes">
+                    <div class="social-likes social-likes_notext" data-counters="no" data-url="http://andryushkov/site/{{ item.alias }}" data-title="{{ item.description }}">
+                        <div class="facebook" title="Share on Facebook"></div>
+                        <div class="vkontakte" title="Share on Vkontakte"></div>
+                        <div class="plusone" title="Share on Google+"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="item-medium__content">
             <a href="/site/{{ item.alias }}" class="item-medium__name">{{ item.name }}</a>
             <div class="item-medium__date">{{ item.date_create | date("d M, Y") }}</div>

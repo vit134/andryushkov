@@ -15,4 +15,16 @@
             {% endif %}
         {% endfor %}
     </ul>
+     <div class="main-menu__footer">
+        <li class="main-menu__item">
+            {% if data.login and data.login | length > 0 %}
+            <a href="/lk">
+                <img src="{{ data.login.avatar }}" class="header__avatar">
+                {{ data.login.name }}
+            </a>
+            {% else %}
+                <a href="/auth">Login</a>
+            {% endif %}
+        </li>
+    </div>
 </div>

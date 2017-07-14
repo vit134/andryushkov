@@ -6,7 +6,7 @@
             <h2>All pages</h2>
         </div>
         <div class="col-lg-6">
-            <a class="btn btn-primary" href="pages/add_new_page" role="button">Add new</a>
+            <a class="btn btn-primary" href="add_new_page" role="button">Add new</a>
         </div>
     </div>
     {# <pre>{{ dump(data.pages) }}</pre> #}
@@ -37,7 +37,7 @@
                             {% endif %}
                         </td>
                         <td class="table_all-sites__td_icons">
-                            <a href="/admin/{{ data.route[0] }}/edit/{{ page.id }}" data-site-id="{{ page.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="edit/{{ page.id }}" data-site-id="{{ page.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
                             <a href="" data-site-id="{{ page.id }}" class="table-icon remove-page-button"><span class="glyphicon glyphicon-trash"></span></a>
                         </td>
                     </tr>
