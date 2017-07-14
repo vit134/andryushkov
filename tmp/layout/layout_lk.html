@@ -1,6 +1,7 @@
 {% extends 'layout/_base.html' %}
 
 {% block content %}
+     <pre>{{ dump(data.login) }}</pre>
     <div class="lk">
         <div class="lk__section">
             <div class="lk__section__title">Personal info</div>
@@ -16,11 +17,41 @@
                     <div class="lk__col-center">
                         <div class="lk__col-center__inner">
                             <div class="lk__row">
-                                <div class="lk-name">{{ data.login.name }}</div>
+                                <div class="lk__row__col">
+                                    Name
+                                </div>
+                                <div class="lk__row__col">
+                                    <div class="lk-name">{{ data.login.name }}</div>
+                                </div>
                             </div>
                             {% if data.login.birthday %}
                                 <div class="lk__row">
-                                    <div class="lk-birthday">{{ data.login.birthday }}</div>
+                                    <div class="lk__row__col">
+                                        Birthday
+                                    </div>
+                                    <div class="lk__row__col">
+                                        <div class="lk-birthday">{{ data.login.birthday }}</div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if data.login.city %}
+                                <div class="lk__row">
+                                    <div class="lk__row__col">
+                                        City
+                                    </div>
+                                    <div class="lk__row__col">
+                                        <div class="lk-birthday">{{ data.login.city }}</div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if data.login.country %}
+                                <div class="lk__row">
+                                    <div class="lk__row__col">
+                                        Country
+                                    </div>
+                                    <div class="lk__row__col">
+                                        <div class="lk-birthday">{{ data.login.country }}</div>
+                                    </div>
                                 </div>
                             {% endif %}
                         </div>

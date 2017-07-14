@@ -94,7 +94,8 @@
             $user->sex        = $auther->getSex();
             $user->birthday   = $auther->getBirthday();
             $user->avatar     = $auther->getAvatar();
-
+            $user->city       = $auther->getCity();
+            $user->country    = $auther->getCountry();
 
 
             $_SESSION['user'] = $user;

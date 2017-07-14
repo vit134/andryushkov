@@ -9,7 +9,7 @@ class Vk extends AbstractAdapter
         parent::__construct($config);
 
         $this->socialFieldsMap = array(
-            'socialId'   => 'uid',
+            'socialId'   => 'id',
             'email'      => 'email',
             'avatar'     => 'photo_big',
             'birthday'   => 'bdate'
@@ -70,6 +70,36 @@ class Vk extends AbstractAdapter
     }
 
     /**
+     * Get user city or null if it is not set
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        $result = null;
+        if (isset($this->userInfo['city'])) {
+            $result = $this->userInfo['city']['title'];
+        }
+
+        return $result;
+    }
+
+    /**
+     * Get user country or null if it is not set
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        $result = null;
+        if (isset($this->userInfo['country'])) {
+            $result = $this->userInfo['country']['title'];
+        }
+
+        return $result;
+    }
+
+    /**
      * Authenticate and return bool result of authentication
      *
      * @return bool
@@ -90,13 +120,15 @@ class Vk extends AbstractAdapter
             if (isset($tokenInfo['access_token'])) {
                 $params = array(
                     'uids'         => $tokenInfo['user_id'],
-                    'fields'       => 'uid,first_name,last_name,screen_name,sex,bdate,photo_big',
-                    'access_token' => $tokenInfo['access_token']
+                    'fields'       => 'uid,first_name,last_name,screen_name,sex,bdate,photo_big,city,country',
+                    'access_token' => $tokenInfo['access_token'],
+                    'v' => '5.52'
                 );
 
                 $userInfo = $this->get('https://api.vk.com/method/users.get', $params);
-                if (isset($userInfo['response'][0]['uid'])) {
+                if (isset($userInfo['response'][0]['id'])) {
                     $this->userInfo = $userInfo['response'][0];
+                    $this->userInfo1 = $userInfo['response'];
                     $result = true;
                 }
             }

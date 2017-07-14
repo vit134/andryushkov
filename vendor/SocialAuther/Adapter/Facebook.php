@@ -28,8 +28,8 @@ class Facebook extends AbstractAdapter
     public function getAvatar()
     {
         $result = null;
-        if (isset($this->userInfo['username'])) {
-            $result = 'http://graph.facebook.com/' . $this->userInfo['username'] . '/picture?type=large';
+        if (isset($this->userInfo['id'])) {
+            $result = 'http://graph.facebook.com/' . $this->userInfo['id'] . '/picture?type=large';
         }
 
         return $result;
@@ -53,11 +53,6 @@ class Facebook extends AbstractAdapter
             );
 
 
-
-           //parse_str($this->get('https://graph.facebook.com/oauth/access_token', $params, false), $tokenInfo);
-
-            //echo $this->get('https://graph.facebook.com/oauth/access_token', $params, false);
-
             $tokenInfo = json_decode($this->get('https://graph.facebook.com/oauth/access_token', $params, false), true);
 
             if (isset($tokenInfo['error'])) {
@@ -65,12 +60,16 @@ class Facebook extends AbstractAdapter
             }
 
             if (count($tokenInfo) > 0 && isset($tokenInfo['access_token'])) {
-                $params = array('access_token' => $tokenInfo['access_token']);
+                $params = array(
+                    'access_token' => $tokenInfo['access_token'],
+                    'fields'       => 'birthday,gender,hometown,name,email,link,location'
+                );
 
                 $userInfo = $this->get('https://graph.facebook.com/me', $params);
 
                 if (isset($userInfo['id'])) {
 
+                    //$this->userInfo->avatar =  'https://graph.facebook.com/'. $userInfo["id"].'/picture?type=large';
                     $this->userInfo = $userInfo;
 
                     $result = true;
