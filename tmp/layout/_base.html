@@ -2,7 +2,7 @@
 {% include 'main-menu.html' %}
 
 
-<div class="l-window js-l-window">
+<div class="l-window js-l-window {{ data.route[0] }}">
     {% block topline %}
         {% include 'topline.html' %}
     {% endblock %}
@@ -13,3 +13,5 @@
     <div class="fake"></div>
     {% block popup %}{% endblock %}
 </div>
+
+{% block scripts %}{% endblock %}

@@ -1,21 +1,62 @@
-{% block header %}
-    {% include 'header.html' %}
-    {% include 'main-menu.html' %}
+{% extends 'layout/_base.html' %}
+
+{% block content %}
+    <div class="all-site__wrapper">
+        {# include 'blocks/filters/main.html' #}
+        {% for site in data.all_sites %}
+            <div class="content__col">
+                {% include 'blocks/items/item-medium/main.html' with { item: site, user: data.login} %}
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}
 
-<div class="l-window js-l-window {{ data.route[0] }}">
-    {% include 'topline.html' %}
 
-    {% block content %}
-        <div class="all-site__wrapper">
-            {# include 'blocks/filters/main.html' #}
-            {% for site in data.all_sites %}
-                <div class="content__col">
-                    {% include 'blocks/items/item-medium/main.html' with { item: site, user: data.login} %}
+{% block popup %}
+    <form class="popup js-popup animated slideInUp" id="add-opinion">
+        <input type="hidden" name="site_id" value="">
+        <input type="hidden" name="user_id" value="">
+        <div class="popup__title">Add opinion</div>
+        <div class="popup__body">
+            <div class="popup__text">
+                Hi, you can just like this site ...
+            </div>
+            <div class="popup__like">
+                <input class="popup__like__input" type="checkbox" name="like" id="like">
+                <label class="popup__like__label animated infinite" for="like"></label>
+            </div>
+            <div class="popup__text">
+                but I'll be very gifted for a more detailed review.
+            </div>
+            <div class="popup__raiting">
+                <div class="popup__raiting__item popup__raiting__item_design">
+                    <div class="popup__raiting__title">Design</div>
+                    <div class="js-raiting-item" data-name="design"></div>
                 </div>
-            {% endfor %}
+                <div class="popup__raiting__item popup__raiting__item_usability">
+                    <div class="popup__raiting__title">Usability</div>
+                    <div class="js-raiting-item" data-name="usability"></div>
+                </div>
+                <div class="popup__raiting__item popup__raiting__item_creativity">
+                    <div class="popup__raiting__title">creativity</div>
+                    <div class="js-raiting-item" data-name="creativity"></div>
+                </div>
+                <div class="popup__raiting__item popup__raiting__item_speed">
+                    <div class="popup__raiting__title">Speed</div>
+                    <div class="js-raiting-item" data-name="speed"></div>
+                </div>
+            </div>
+            <div class="popup__opinion">
+                <textarea class="popup__textarea" placeholder="Write your review here" name="opinion"></textarea>
+            </div>
         </div>
-    {% endblock %}
+        <div class="popup__submit js-popup-submit">Send</div>
+        <div class="popup__close js-popup-close"></div>
+    </form>
+{% endblock %}
 
+{% block scripts %}
     <script type="text/javascript" src="js/build/all-site/all-site.js"></script>
-</div>
+{% endblock %}
+

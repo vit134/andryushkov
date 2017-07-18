@@ -3,6 +3,17 @@
 {% block content %}
 
     {% include 'blocks/main-block/main.html' with {item: data.main_site, user: data.login } %}
+    <div class="svg-anim">
+
+    </div>
+    {# <script>
+        $(document).ready(function() {
+            new Vivus('svg', {
+                duration: 200,
+                type: 'oneByOne'
+            });
+        })
+    </script> #}
     <div class="content">
         <div class="content__wrapper">
             <div class="content__head">

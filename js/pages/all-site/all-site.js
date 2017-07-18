@@ -85,6 +85,15 @@ $(document).ready(function() {
     }
 
     animateBlocks();
+
+
+
+    function getViewPort() {
+        var top = $('.all-site__wrapper').scrollTop();
+        console.log(top);
+    }
+
+    getViewPort();
 })
 
 
