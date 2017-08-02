@@ -73,6 +73,13 @@
                                     <input value="{{ data.edit_site.link }}" type="text" class="form-control" name="link" id="link" placeholder="">
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input {% if data.edit_site.create_template == 1 %}checked{% endif %} type="checkbox" name="create_template"> Use template
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

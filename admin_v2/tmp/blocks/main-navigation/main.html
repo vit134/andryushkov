@@ -1,0 +1,6 @@
+<ul id="side-nav" class="main-menu navbar-collapse collapse">
+    <li class="{% if data.route[0] == '' %}active{% endif %}"><a href="/admin_v2/"><i class="icon-gauge"></i><span class="title">Dashboard</span></a></li>
+    <li class="{% if data.route[0] == 'sites' %}active{% endif %}"><a href="/admin_v2/sites/"><i class="icon-gauge"></i><span class="title">Sites</span></a></li>
+    <li class="{% if data.route[0] == 'templates' %}active{% endif %}"><a href="/admin_v2/templates/"><i class="icon-gauge"></i><span class="title">Templates</span></a></li>
+    <li class="{% if data.route[0] == 'pages' %}active{% endif %}"><a href="/admin_v2/pages/"><i class="icon-gauge"></i><span class="title">Pages</span></a></li>
+</ul>

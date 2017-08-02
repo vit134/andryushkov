@@ -16,11 +16,12 @@ var path = {
     build: {
         site: {
             css: 'css/build/',
+            article: 'css/article/build/',
             js: 'js/build/'
         },
         admin: {
-            css: 'admin/css/build/',
-            js: 'admin/js/build/'
+            css: 'admin_v2/css/build/',
+            js: 'admin_v2/js/build/'
         }
     },
     dev: {
@@ -31,25 +32,26 @@ var path = {
             less: 'css/*.less',
             blocks: 'css/blocks/*/*.less',
             pages: 'css/pages/*/*.less',
-            vendorCss: 'css/vendor/*.css'
+            vendorCss: 'css/vendor/*.css',
+            article: 'css/article/main.less'
         },
         admin: {
-            js: 'admin/js/main.js',
-            jsPages: 'admin/js/pages/*/*.js',
-            less: 'admin/css/*.less',
-            blocks: 'admin/css/blocks/*/*.less',
-            pages: 'admin/css/pages/*/*.less',
-            vendorCss: 'admin/css/vendor/*.css'
+            js: 'admin_v2/js/main.js',
+            jsPages: 'admin_v2/js/pages/*/*.js',
+            less: 'admin_v2/css/*.less',
+            blocks: 'admin_v2/css/blocks/*/*.less',
+            pages: 'admin_v2/css/pages/*/*.less',
+            vendorCss: 'admin_v2/css/vendor/*.css'
         }
     }
 }
 
 gulp.task('styles', function () {
     return gulp.src([
-        //path.dev.site.vendorCss,
         path.dev.site.less,
         path.dev.site.blocks,
-        path.dev.site.pages
+        path.dev.site.pages,
+        path.dev.site.article
     ])
     .pipe(concat('__main.less'))
     .pipe(less())
@@ -59,6 +61,18 @@ gulp.task('styles', function () {
     .pipe(cleanCSS())
     .pipe(rename('_main.css'))
     .pipe(gulp.dest(path.build.site.css));
+});
+
+gulp.task('styles-article', ['styles'], function () {
+    return gulp.src([path.dev.site.article])
+    .pipe(concat('__main.less'))
+    .pipe(less())
+    .pipe(prefixer())
+    .on('error', console.log)
+    .pipe(gulp.dest(path.build.site.article))
+    .pipe(cleanCSS())
+    .pipe(rename('_main.css'))
+    .pipe(gulp.dest(path.build.site.article));
 });
 
 gulp.task('styles-admin', function () {

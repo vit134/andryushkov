@@ -1,0 +1,41 @@
+<!-- Main header -->
+<div class="main-header row">
+  <div class="col-sm-6 col-xs-7">
+    <!-- User info -->
+    <ul class="user-info pull-left">
+      <li class="profile-info dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+            <img width="44" class="img-circle avatar" alt="" src="/admin_v2/theme/images/man-3.jpg">
+            {{ data.login.first_name | capitalize }} {{ data.login.last_name | capitalize }}
+            <span class="caret"></span>
+        </a>
+        <!-- User action menu -->
+        <ul class="dropdown-menu">
+          <li><a href="/admin_v2/account"><i class="icon-user"></i>My profile</a></li>
+          <li><a href="#/"><i class="icon-mail"></i>Messages</a></li>
+          <li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-cog"></i>Account settings</a></li>
+          <li><a href="/admin_v2/core/logout.php"><i class="icon-logout"></i>Logout</a></li>
+        </ul>
+        <!-- /user action menu -->
+      </li>
+    </ul>
+    <!-- /user info -->
+  </div>
+  <div class="col-sm-6 col-xs-5">
+    <div class="pull-right">
+        <!-- User alerts -->
+        <ul class="user-info pull-left">
+            <!-- Notifications -->
+                {% include 'blocks/notifications/main.html' %}
+            <!-- /notifications -->
+            <!-- Messages -->
+                {% include 'blocks/messages/main.html' %}
+            <!-- /Messages -->
+        </ul>
+        <!-- /user alerts -->
+    </div>
+  </div>
+</div>
+<!-- /main header -->

@@ -1,26 +1,24 @@
 <?php
+    session_start();
     define('SITE_PATH', realpath(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR);
 
+
+    $config['adminPath'] = '/admin_v2';
+    $config['subPagePath'] = $config['adminPath'] . '/tmp/sub-page';
 
     function getUrl($url) {
         return array_splice(explode('/', $url), 1);
     }
 
-     /*function route() {
-        $url = $_SERVER['REQUEST_URI'];
-        //echo $url;
-        $arr array();
+    function checkLogin() {
+        global $mysqli, $config;
 
-        if (stristr($url, '?') != '') {
-            parse_str($url, $arr['params']);
-            $url = explode("?", $url);
-
-            $url = str_replace('/admin/', "", $url[0]);
+        //session_start();
+        if (!$_SESSION['login']) {
+            header("location:". $config['subPagePath'] ."/login.html");
         }
-        $url = str_replace('/admin/', "", $url);
+    }
 
-        return array_splice(explode('/', $url), 0);
-    }*/
 
     function route() {
         $url = $_SERVER['REQUEST_URI'];
@@ -35,10 +33,6 @@
         } else {
             $result = explode('/', $url);
         }
-
-        /*echo '<pre>';
-        var_dump(array_splice($result, 1));
-        echo '</pre>';*/
 
         return array_splice($result, 1);
     }
@@ -79,8 +73,6 @@
 
         $res['likes'] = getSiteLikes($res['id']);
 
-
-        //return $result->fetch_array(MYSQLI_ASSOC);
         return $res;
     }
 
@@ -182,7 +174,6 @@
         $likeQuery = "SELECT * FROM `liked_sites` WHERE `site_id` = " . $id . " ORDER BY `date_create` DESC";
 
         foreach ($mysqli->query($likeQuery) as $key => $row) {
-            //var_dump($row);
             $avatar = '';
             $name = 'no name';
 
@@ -215,9 +206,6 @@
     function getUserLikes($userId) {
         global $mysqli, $indexData;
         $result = array();
-        //SELECT * FROM `liked_sites` INNER JOIN `sites` ON liked_sites.site_id = sites.id WHERE `user_id`=3710019
-
-        //$likeQuery = "SELECT * FROM `liked_sites` WHERE `user_id` = " . $userId . " ORDER BY `date_create` DESC";
         $likeQuery = "SELECT
                         liked_sites.opinion AS opinion,
                         liked_sites.design_raiting AS design_raiting,

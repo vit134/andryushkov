@@ -16,7 +16,7 @@
 
     $twig->addExtension(new Twig_Extension_Debug());
 
-     $adapterConfigs = array(
+    $adapterConfigs = array(
         'vk' => array(
             'client_id'     => '6104770',
             'client_secret' => 'PeZxugyq7gUuxMhgul9k',

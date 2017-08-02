@@ -59,10 +59,10 @@
                                 </select>
                             </div>
                             <div class="col-lg-6">
-                                <label for="alias">Alias</label>
+                                <label for="link">Real Link</label>
                                 <div class="input-group">
-                                    <div class="input-group-addon">/</div>
-                                    <input type="text" class="form-control" name="alias" id="alias" placeholder="">
+                                    <div class="input-group-addon">http://</div>
+                                    <input type="text" class="form-control" name="link" id="link" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -70,10 +70,17 @@
                     <div class="form-group">
                          <div class="row">
                             <div class="col-lg-6">
-                                <label for="link">Real Link</label>
+                                <label for="alias">Alias</label>
                                 <div class="input-group">
-                                    <div class="input-group-addon">http://</div>
-                                    <input type="text" class="form-control" name="link" id="link" placeholder="">
+                                    <div class="input-group-addon">/</div>
+                                    <input type="text" class="form-control" name="alias" id="alias" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input {% if edit.create_template == 1 %}checked{% endif %} type="checkbox" name="create_template"> Create template
+                                    </label>
                                 </div>
                             </div>
                         </div>

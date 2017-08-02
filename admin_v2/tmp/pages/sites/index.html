@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <link href="{{ data.config.adminPath }}/theme/css/mouldifi-forms.css" rel="stylesheet">
+    <link href="{{ data.config.adminPath }}/theme/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
+    <link href="{{ data.config.adminPath }}/theme/js/plugins/datatables/extensions/Buttons/css/buttons.dataTables.css" rel="stylesheet">
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>All sites</h2>
+        </div>
+        <div class="col-lg-6 text-right">
+            <a class="btn btn-primary" href="add_new" role="button">Add new</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-bordered table_all-sites table table-striped table-bordered table-hover dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Alias</th>
+                            <th>Date Create</th>
+                            <th>Author</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for site in data.sites %}
+                            <tr>
+                                <td>{{ site.id }}</td>
+                                <td class="table_all-sites__td_name">
+                                    {% if site.link != '' %}
+                                        <a href="{{ site.link }}" target="_blank">{{ site.name }}</a>
+                                    {% else %}
+                                        {{ site.name }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ site.description }}</td>
+                                <td>{{ site.type }}</td>
+                                <td>{{ site.alias }}</td>
+                                <td>{{ site.date_create }}</td>
+                                <td>{{ site.author }}</td>
+                                <td class="table_all-sites__td_icons">
+                                    <a href="{{ data.config.adminPath }}/sites/edit/{{ site.id }}" data-site-id="{{ site.id }}" class="table-icon"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="" data-site-id="{{ site.id }}" class="table-icon"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                    <a href="" data-site-id="{{ site.id }}" class="table-icon remove-site-button"><span class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    <tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/jszip.min.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/pdfmake.min.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/vfs_fonts.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/extensions/Buttons/js/buttons.html5.js"></script>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/extensions/Buttons/js/buttons.colVis.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dataTables-example').DataTable({
+                dom: '<"html5buttons" B>lTfgitp',
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        exportOptions: {
+                            columns: [ 0, ':visible' ]
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        exportOptions: {
+                            columns: [ 0, 1, 2, 3, 4 ]
+                        }
+                    },
+                    'colvis'
+                ],
+                "columnDefs": [
+                    {
+                        "width": "10%",
+                        "targets": 7
+                    }
+                ]
+            });
+        });
+    </script>
+{% endblock %}

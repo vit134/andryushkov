@@ -44,7 +44,15 @@ $(document).ready(function() {
         })
 
         $fields.each(function() {
-            data.append($(this).attr('name'), $(this).val());
+            if ($(this).attr('type') === 'checkbox') {
+                if ($(this).prop('checked')) {
+                    data.append($(this).attr('name'), 1);
+                } else {
+                    data.append($(this).attr('name'), 0);
+                }
+            } else {
+                data.append($(this).attr('name'), $(this).val());
+            }
         })
 
         return data;

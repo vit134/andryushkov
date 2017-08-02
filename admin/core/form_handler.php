@@ -67,7 +67,9 @@
             `small_img_file`,
             `link`,
             `tags`,
-            `colors`
+            `colors`,
+            `create_template`,
+            `content`
         )
          VALUES (
             '',
@@ -85,13 +87,30 @@
             '". $filesArr['small_img_file']['path'] ."',
             '". $formFields['link'] ."',
             '". $formFields['tags'] ."',
-            '". $formFields['colors'] ."'
+            '". $formFields['colors'] ."',
+            '". $formFields['create_template'] ."',
+            '". $formFields['content'] ."'
         )";
 
 
 
         if ($mysqli->query($addSiteQuery)) {
             $response['status'] = 'success';
+            $path = '../../tmp/site-blocks/';
+
+            if ($formFields['create_template'] != '0') {
+                if (mkdir($path . $formFields['alias'], 0777, true)) {
+                    $fp = fopen($path . $formFields['alias'] . '/main.html', "w");
+                    if (!$fp) {
+                        $response['folder'] = 'error';
+                    } else {
+                        fclose($fp);
+                        $response['folder'] = 'success';
+                    }
+                } else {
+                    $response['status'] = 'danger';
+                }
+            }
         } else {
             $response['status'] = 'danger';
         }

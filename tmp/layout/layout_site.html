@@ -5,6 +5,14 @@
     {% include 'blocks/main-block/site.html' with {cssClass: 'light', item: data.site } %}
     <div class="sites__wrapper">
         <h2 class="sites__title">{{ data.site.name }}</h2>
-        <pre>{{ dump(data.site) }}</pre>
+        <div class="sites__body">
+            {% if data.site.create_template == 1 %}
+                {% include 'site-blocks/' ~ data.site.alias ~ '/main.html' %}
+            {% else %}
+                <div class="article">
+                    {{ data.site.content  | replace({'/~/': ''}) | raw }}
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

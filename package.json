@@ -43,6 +43,7 @@
     "gulp-watch": "^4.3.11",
     "inline-source": "^5.2.1",
     "path": "^0.12.7",
+    "require-template": "^1.0.9",
     "rimraf": "^2.6.1",
     "yargs": "^7.0.2"
   }

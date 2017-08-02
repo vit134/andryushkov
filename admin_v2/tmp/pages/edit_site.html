@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="row">
+        <h2>Edit site</h3>
+    </div>
+    {#<pre>{{ dump(data) }}</pre>#}
+    <div class="row">
+        <form id="form-editSite" data-toggle="validator" role="form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="hidden" value="edit_site" name="form_type">
+                    <input type="hidden" value="{{ data.edit_site.id }}" name="site_id">
+                    <div class="form-group">
+                        <label for="site_name">Site name</label>
+                        <i>*</i>
+                        <input value="{{ data.edit_site.name }}" type="text" class="form-control" name="site_name" id="site_name" placeholder="Site name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="site_description">Site description</label>
+                        <input value="{{ data.edit_site.description }}" type="text" class="form-control" name="site_description" id="site_description" placeholder="Site description">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="design_raiting">Design raiting</label>
+                                <input value="{{ data.edit_site.design_raiting }}" type="number" min="0" max="10" step="0.1" class="form-control" name="design_raiting" id="design_raiting" placeholder="">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="creativity_raiting">Creativ raiting</label>
+                                <input value="{{ data.edit_site.creativity_raiting }}" type="number" min="0" max="10" step="0.1" class="form-control" name="creativity_raiting" id="creativity_raiting" placeholder="">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="usability_raiting">Usability raiting</label>
+                                <input value="{{ data.edit_site.usability_raiting }}" type="number" min="0" max="10" step="0.1" class="form-control" name="usability_raiting" id="usability_raiting" placeholder="">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="speed_raiting">Speed raiting</label>
+                                <input value="{{ data.edit_site.speed_raiting }}" type="number" min="0" max="10" step="0.1" class="form-control" name="speed_raiting" id="speed_raiting" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="row">
+                            <div class="col-lg-6">
+                                <label for="site_type">Site type</label>
+                                <i>*</i>
+                                <select class="form-control" name="site_type" id="site_type" placeholder="Site type" required>
+                                    {% for type in data.site_types %}
+                                        {% if data.edit_site.type == type %}
+                                            <option selected>{{ type }}</option>
+                                        {% else %}
+                                            <option>{{ type }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="alias">Alias</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">/</div>
+                                    <input value="{{ data.edit_site.alias }}" type="text" class="form-control" name="alias" id="alias" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="row">
+                            <div class="col-lg-6">
+                                <label for="link">Real Link</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">http://</div>
+                                    <input value="{{ data.edit_site.link }}" type="text" class="form-control" name="link" id="link" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="site_author">Site author</label>
+                                <select class="form-control" name="site_author" id="site_author" placeholder="Site author">
+                                    {% for user in data.users %}
+                                        {% if data.edit_site.author == user %}
+                                            <option selected>{{ user }}</option>
+                                        {% else %}
+                                            <option>{{ user }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="date_create">Date create</label>
+                                <div class='input-group date' id="date_create" >
+
+                                    <input value="{{ data.edit_site.date_create | date('d.m.Y H:i') }}" type='text' placeholder="{{ data.edit_site.date_create }}" class="form-control" name="date_create" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <input value="{{ data.edit_site.tags }}" type="text" class="form-control" name="tags" id="tags" data-offset="0" placeholder="" >
+
+                    </div>
+                    <div class="form-group">
+                        <label for="colors">Colors</label>
+                        <input value="{{ data.edit_site.colors }}" type="text" class="form-control" name="colors" id="colors" placeholder="" >
+
+                    </div>
+                </div>
+                <div class="col-lg-4  col-lg-offset-1">
+                    <div class="row edit-site__image__row">
+                        <div class="edit_site__image__title">Big File</div>
+                        <div class="edit_site__image__block {% if data.edit_site.big_img_file != ''  %}image{% endif %}">
+                            <img class="edit_site__image__image" src="{{ data.edit_site.big_img_file }}">
+                            <div class="edit_site__image__remove-image js-remove-preview-image"><span class="glyphicon glyphicon-trash"></span></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="big_img_file" name="big_img_file" class="file-input">
+                            <p class="help-block">Example block-level help text here.</p>
+                        </div>
+                    </div>
+                    <div class="row edit-site__image__row">
+                        <div class="edit_site__image__title">Small File</div>
+                        <div class="edit_site__image__block {% if data.edit_site.small_img_file != ''  %}image{% endif %}">
+                            <img class="edit_site__image__image" src="{{ data.edit_site.small_img_file }}">
+                            <div class="edit_site__image__remove-image js-remove-preview-image"><span class="glyphicon glyphicon-trash"></span></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="small_img_file" name="small_img_file" class="file-input">
+                            <p class="help-block">Example block-level help text here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-default" id="form-editSite-submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

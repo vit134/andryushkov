@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="../js/vendor/jquery-3.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+    <script type="text/javascript" src="js/datetime-picker.min.js"></script>
+    <script type="text/javascript" src="js/moments-locale-ru.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/datetime-picker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/build/__main.css">
+    <script type="text/javascript" src="js/validator.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="alert alert-addSite">
+        Add site was <strong></strong>!
+    </div>
+    <div class="alert alert-removeSite">
+        Removing site was <strong></strong>!
+    </div>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="">Admin Panel</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!-- <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Sites<span class="sr-only">(current)</span></a></li>
+                        <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new site<span class="sr-only">(current)</span></a></li> -->
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li class="<?php if ($route == 'sites') echo 'active' ?>"><a href="?page=sites">Show all<span class="sr-only">(current)</span></a></li>
+                            <li class="<?php if ($route == 'add_new') echo 'active' ?>"><a href="?page=add_new">Add new site<span class="sr-only">(current)</span></a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </nav>
+        </div>

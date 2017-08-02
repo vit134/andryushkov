@@ -4,6 +4,7 @@
     </div>
     <!--<a href="site/{{ item.alias }}" class="main-block__link"></a>-->
     <div class="main-block__wrapper">
+        {# <pre>{{ dump(item.likes) }}</pre> #}
         <div class="main-block__head">
             <div class="main-block__col main-block__col_left"><span class="main-block__date">Site of the day /</span><span class="main-block__date__val"> {{ "now"|date("d M, Y") }}</span></div>
             <div class="main-block__col main-block__col_right">
@@ -36,7 +37,7 @@
             </div>
         </div>
         <div class="main-block__content">
-            <a href="/pages/sites?site={{ item.alias }}" class="main-block__content__title">{{ item.name }}</a>
+            <a href="/site/{{ item.alias }}" class="main-block__content__title">{{ item.name }}</a>
             <div class="main-block__content__subtitle">by <a href="#" class="main-block__content__subtitle__developer">{{ item.author }}</a> from Russia</div>
             <div class="main-block__raiting">
                 <div class="main-block__raiting__item">

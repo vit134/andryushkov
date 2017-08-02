@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
+<meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
+<title>Admin Panel | {{ data.route[0] | capitalize }}</title>
+<!-- Site favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='{{ data.config.adminPath }}/theme/images/favicon.ico' />
+<!-- /site favicon -->
+
+<!-- Entypo font stylesheet -->
+<link href="{{ data.config.adminPath }}/theme/css/entypo.css" rel="stylesheet">
+<!-- /entypo font stylesheet -->
+
+<!-- Font awesome stylesheet -->
+<link href="{{ data.config.adminPath }}/theme/css/font-awesome.min.css" rel="stylesheet">
+<!-- /font awesome stylesheet -->
+
+<!-- Bootstrap stylesheet min version -->
+<link href="{{ data.config.adminPath }}/theme/css/bootstrap.min.css" rel="stylesheet">
+<!-- /bootstrap stylesheet min version -->
+
+<!-- Mouldifi core stylesheet -->
+<link href="{{ data.config.adminPath }}/theme/css/mouldifi-core.css" rel="stylesheet">
+<!-- /mouldifi core stylesheet -->
+
+<link href="{{ data.config.adminPath }}/theme/css/mouldifi-forms.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="{{ data.config.adminPath }}/css/datetime-picker.min.css">
+<link rel="stylesheet" type="text/css" href="{{ data.config.adminPath }}/css/build/__main.css">
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="{{ data.config.adminPath }}/theme/js/html5shiv.min.js"></script>
+      <script src="{{ data.config.adminPath }}/theme/js/respond.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 8]>
+    <script src="{{ data.config.adminPath }}/theme/js/plugins/flot/excanvas.min.js"></script>
+<![endif]-->
+<!--Load JQuery-->
+<script src="{{ data.config.adminPath }}/theme/js/jquery.min.js"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f9foeuegk6si50qwaywq64yw22vhjdyttykg62u831voqdoc"></script>
+</head>
+<body>
+
+<!-- Page container -->
+<div class="page-container">
+
+    <!-- Page Sidebar -->
+    <div class="page-sidebar">
+
+        <!-- Site header  -->
+        <header class="site-header">
+          <div class="site-logo"><a href="/admin_v2">Admin Panel</a></div>
+          <div class="sidebar-collapse hidden-xs"><a class="sidebar-collapse-icon" href="#"><i class="icon-menu"></i></a></div>
+          <div class="sidebar-mobile-menu visible-xs"><a data-target="#side-nav" data-toggle="collapse" class="mobile-menu-icon" href="#"><i class="icon-menu"></i></a></div>
+        </header>
+        <!-- /site header -->
+
+        <!-- Main navigation -->
+            {% include 'blocks/main-navigation/main.html' %}
+        <!-- /main navigation -->
+  </div>
+  <!-- /page sidebar -->
+  <!-- Main container -->
+  <div class="main-container gray-bg">
+        <!-- Main header -->
+            {% include 'blocks/main-header/main.html' %}
+        <!-- /main header -->
+        <div class="main-content">
+            <div class="l-wrapper">
+              {% block content %}{% endblock %}
+            </div>
+        </div>
+            <!-- Footer -->
+            <footer class="footer-main">
+                &copy; 2016 <strong>Mouldifi</strong> Admin Theme by <a target="_blank" href="#/">G-axon</a>
+            </footer>
+            <!-- /footer -->
+      </div>
+      <!-- /main content -->
+  </div>
+  <!-- /main container -->
+</div>
+<!-- /page container -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
+<script type="text/javascript" src="{{ data.config.adminPath }}/js/vendor/datetime-picker.min.js"></script>
+<script type="text/javascript" src="{{ data.config.adminPath }}/js/vendor/moments-locale-ru.js"></script>
+
+<script type="text/javascript" src="{{ data.config.adminPath }}/js/vendor/validator.js"></script>
+<script type="text/javascript" src="{{ data.config.adminPath }}/js/vendor/jquery.tablesorter.js"></script>
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=f9foeuegk6si50qwaywq64yw22vhjdyttykg62u831voqdoc"></script>
+<script type="text/javascript" src="{{ data.config.adminPath }}/js/main.js"></script>
+
+
+<script src="{{ data.config.adminPath }}/theme/js/bootstrap.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/metismenu/jquery.metisMenu.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/blockui-master/jquery-ui.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/blockui-master/jquery.blockUI.js"></script>
+<!--Float Charts-->
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.selection.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="{{ data.config.adminPath }}/theme/js/functions.js"></script>
+
+<!--ChartJs-->
+<script src="{{ data.config.adminPath }}/theme/js/plugins/chartjs/Chart.min.js"></script>
