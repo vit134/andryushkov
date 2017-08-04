@@ -97,6 +97,11 @@ $(document).ready(function() {
     });
 
 
+    setTimeout(function() {
+        console.log(tinymce.activeEditor.settings.templates);
+    }, 2000)
+
+
     /*function saveImage(files, siteId) {
         var data = new FormData();
         console.log(siteId);
@@ -230,6 +235,10 @@ $(document).ready(function() {
 
     function bindEvents() {
 
+        $('#image_upload').on('change', function() {
+            console.log('go');
+        })
+
         addFileBtn.on('click', function() {
             uploadFilesInput.trigger('click');
         })
@@ -330,6 +339,49 @@ $(document).ready(function() {
                             clearFormfields($formAddSite);
                         } else {
                             showAlert($('.alert-addSite'), 'danger', 'not success');
+                        }
+                    },
+                    error: function( jqXHR, textStatus, errorThrown ) {
+                       console.log('error');
+                       console.log(jqXHR);
+                       console.log(textStatus);
+                       console.log(errorThrown);
+                    }
+                });
+            }
+        })
+
+        $formEditSite.validator({disable: true}).on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                //$formAddSiteSubmit.attr('disabled', 'disabled');
+            } else {
+                e.preventDefault();
+
+                var formData = getFormfields($formEditSite);
+
+                $.ajax({
+                    url: '/admin/core/edit_site.php',
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    dataType: 'json',
+                    data: formData,
+                    beforeSend: function() {
+                        console.log(formData);
+                    },
+                    success: function(e){
+                        //console.log(JSON.parse(e));
+                        console.log(e);
+
+                        /*e = JSON.parse(e);*/
+                        var status = e.status;
+
+                        if (e.status === 'success') {
+                            showAlert($('.alert-editSite'), 'success', 'success');
+                            clearFormfields($formAddSite);
+                        } else {
+                            showAlert($('.alert-editSite'), 'danger', 'not success');
                         }
                     },
                     error: function( jqXHR, textStatus, errorThrown ) {
@@ -456,6 +508,9 @@ $(document).ready(function() {
 
 
     init();
+
+    /*showAlert($('.alert'), 'success', 'success');
+    showAlert($('.alert'), 'danger', ' not success');*/
 
 
 

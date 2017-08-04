@@ -1,1 +1,71 @@
-$(document).ready(function(){function e(e,n,t){var a;"success"===n?a="alert-success":"info"===n?a="alert-info":"warning"===n?a="alert-warning ":"danger"===n&&(a="alert-danger "),e.addClass(a).find("strong").html(t),e.show().alert(),setTimeout(function(){e.hide()},5e3)}function n(){return a.find("input").each(function(){s[$(this).attr("name")]=$(this).val(),console.log($(this).val())}),s}console.log("add new template page");var t=$("#add-new-tmp-submit"),a=$("#add-new-tmp-form"),s=($(".remove-button"),{});t.on("click",function(t){t.preventDefault();var s=n();$.ajax({url:"/admin/core/add-new-template.php",type:"POST",data:s,beforeSend:function(){console.log(s)},success:function(n){console.log(JSON.parse(n)),n=JSON.parse(n),"success"===n.status?(e($(".alert-addTemplate"),"success","success"),a.find("input").val("")):e($(".alert-addTemplate"),"danger","not success")}})})});
+$(document).ready(function() {
+    console.log('add new template page');
+
+
+    var submitBtn = $('#add-new-tmp-submit')
+      , form = $('#add-new-tmp-form')
+      , removeButton = $('.remove-button')
+      ;
+
+
+    var fieldsVal = {};
+
+    function showAlert($alert,status, message) {
+
+        var atertType;
+
+        if (status === 'success') {
+            atertType = 'alert-success'
+        } else if (status === 'info') {
+            atertType = 'alert-info'
+        } else if (status === 'warning') {
+            atertType = 'alert-warning '
+        } else if (status === 'danger') {
+            atertType = 'alert-danger '
+        }
+
+        $alert.addClass(atertType).find('strong').html(message);
+        $alert.show().alert();
+
+        setTimeout(function() {
+            $alert.hide();
+        }, 5000)
+    }
+
+    function getFormFields() {
+        form.find('input').each(function() {
+            fieldsVal[$(this).attr('name')] = $(this).val();
+            console.log($(this).val());
+        })
+
+        return fieldsVal;
+    }
+
+    submitBtn.on('click', function(e) {
+        e.preventDefault();
+        var data = getFormFields();
+
+        $.ajax({
+            url: '/admin/core/add-new-template.php',
+            type: 'POST',
+                data: data,
+                beforeSend: function() {
+                    console.log(data);
+                },
+                success: function(e){
+                    console.log(JSON.parse(e));
+
+                    e = JSON.parse(e);
+
+                    if (e.status === 'success') {
+                        showAlert($('.alert-addTemplate'), 'success', 'success');
+                        form.find('input').val('');
+                    } else {
+                        showAlert($('.alert-addTemplate'), 'danger', 'not success');
+                    }
+
+                }
+        });
+    })
+
+})

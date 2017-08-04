@@ -572,10 +572,47 @@ label + i {
   top: 50%;
   margin-top: -12px;
 }
+.upload-files__label {
+  font-weight: 600;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
 .upload-files__file {
   padding-bottom: 5px;
   margin-bottom: 5px;
   border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.upload-files__file:hover .upload-files__file__preview {
+  display: block;
+}
+.upload-files__file:hover .upload-files__file__remove {
+  display: block;
+}
+.upload-files__file__preview {
+  display: none;
+  position: absolute;
+  top: 99%;
+  left: 0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  z-index: 2;
+}
+.upload-files__file__preview img {
+  max-width: 250px;
+}
+.upload-files__file__remove {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -4px;
+  font-size: 22px;
+  cursor: pointer;
 }
 .upload-files__file:last-child {
   padding-bottom: 0;

@@ -68,7 +68,7 @@
     <script src="{{ data.config.adminPath }}/theme/js/plugins/datatables/extensions/Buttons/js/buttons.colVis.js"></script>
     <script>
         $(document).ready(function () {
-            $('.dataTables-example').DataTable({
+            /*$('.dataTables-example').DataTable({
                 dom: '<"html5buttons" B>lTfgitp',
                 buttons: [
                     {
@@ -97,7 +97,11 @@
                         "targets": 7
                     }
                 ]
-            });
+            });*/
         });
     </script>
+{% endblock %}
+
+{% block pageScripts %}
+    <script type="text/javascript" src="{{ data.config.adminPath }}/js/build/site/index.js"></script>
 {% endblock %}

@@ -1,1 +1,78 @@
-$(document).ready(function(){function e(e,t,n){var a;"success"===t?a="alert-success":"info"===t?a="alert-info":"warning"===t?a="alert-warning ":"danger"===t&&(a="alert-danger "),e.addClass(a).find("strong").html(n),e.show().alert(),setTimeout(function(){e.hide()},5e3)}function t(){return a.find("input, select").each(function(){"checkbox"===$(this).attr("type")?$(this).prop("checked")?s[$(this).attr("name")]=1:s[$(this).attr("name")]=0:s[$(this).attr("name")]=$(this).val()}),s}console.log("edit page - page");var n=$("#form-editPage-submit"),a=$(".editPage-form"),s={};n.on("click",function(n){n.preventDefault();var a=t();$.ajax({url:"/admin/core/edit_page.php",type:"POST",data:a,beforeSend:function(){console.log(a)},success:function(t){console.log(JSON.parse(t)),t=JSON.parse(t),"success"===t.status?e($(".alert-editPage"),"success","success"):e($(".alert-editPage"),"danger","not success")},erorr:function(e){console.log(e)}})})});
+$(document).ready(function() {
+    console.log('edit page - page');
+
+
+    var submitBtn = $('#form-editPage-submit')
+      , form = $('.editPage-form')
+      ;
+
+    var fieldsVal = {};
+
+    function showAlert($alert,status, message) {
+
+        var atertType;
+
+        if (status === 'success') {
+            atertType = 'alert-success'
+        } else if (status === 'info') {
+            atertType = 'alert-info'
+        } else if (status === 'warning') {
+            atertType = 'alert-warning '
+        } else if (status === 'danger') {
+            atertType = 'alert-danger '
+        }
+
+        $alert.addClass(atertType).find('strong').html(message);
+        $alert.show().alert();
+
+        setTimeout(function() {
+            $alert.hide();
+        }, 5000)
+    }
+
+    function getFormFields() {
+        form.find('input, select').each(function() {
+            if ($(this).attr('type') === 'checkbox') {
+                if ($(this).prop('checked')) {
+                    fieldsVal[$(this).attr('name')] = 1;
+                } else {
+                    fieldsVal[$(this).attr('name')] = 0;
+                }
+            } else {
+                fieldsVal[$(this).attr('name')] = $(this).val();
+            }
+
+        })
+
+        return fieldsVal;
+    }
+
+    submitBtn.on('click', function(e) {
+        e.preventDefault();
+        var data = getFormFields();
+
+        $.ajax({
+            url: '/admin/core/edit_page.php',
+            type: 'POST',
+            data: data,
+            beforeSend: function() {
+                console.log(data);
+            },
+            success: function(e){
+                console.log(JSON.parse(e));
+
+                e = JSON.parse(e);
+
+                if (e.status === 'success') {
+                    showAlert($('.alert-editPage'), 'success', 'success');
+                } else {
+                    showAlert($('.alert-editPage'), 'danger', 'not success');
+                }
+
+            },
+            erorr: function(w) {
+                console.log(w);
+            }
+        });
+    })
+})

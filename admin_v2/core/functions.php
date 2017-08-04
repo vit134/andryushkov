@@ -4,13 +4,15 @@
         $dir = '../uploads/temporary/' . $siteId ;
         $arr = [];
 
-        echo $dir . '<br>';
         if (file_exists($dir)) {
             $files = scandir($dir);
             foreach ($files as $value) {
                 if ($value != '.' && $value != '..')
                 //echo $value . '<br>';
-                $arr[] = $value;
+                $arr[] = array(
+                    'title' => $value,
+                    'value' => '/uploads/temporary/' . $siteId . '/' . $value
+                );
             }
 
             return $arr;
