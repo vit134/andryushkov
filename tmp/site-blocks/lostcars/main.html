@@ -1,0 +1,36 @@
+<div class="lostcars">
+
+    <style type="text/css">
+        svg path {
+            fill-opacity: 0;
+        }
+
+        svg.filled path {
+            fill-opacity: 1;
+            transition: fill-opacity 1s ease-out;
+            -webkit-transition: fill-opacity 1s ease-out;
+            -moz-transition: fill-opacity 1s ease-out;
+            -ms-transition: fill-opacity 1s ease-out;
+        }
+    </style>
+    <object id="my-svg" type="image/svg+xml" data="/uploads/temporary/108/hours6.svg"></object>
+
+    <script>
+        new Vivus('my-svg', {
+              duration: 100,
+              type: 'async',
+              start: 'inViewport',
+              onReady: function (myVivus) {
+                  // `el` property is the SVG element
+
+              }
+          }, myCallback);
+
+        function myCallback(myVivus) {
+            console.log($(myVivus.el).find('path').eq(2));
+            $(myVivus.el).addClass('filled');
+            /*$(myVivus.el).find('#svg_1').css('fill', 'red');
+            $(myVivus.el).find('#svg_4').css('fill', 'blue');*/
+        }
+    </script>
+</div>
